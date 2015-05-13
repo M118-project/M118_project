@@ -1,5 +1,5 @@
 unsigned int hwcStructID = 888;
-unsigned int hwcParaID = 1461426860UL;
+unsigned int hwcParaID = 1461497325UL;
 // RTPC-GENERATED-CODE
 /* ************************************************************************
  *  Generated C-Code to support RTIO with LABCAR-RTPC

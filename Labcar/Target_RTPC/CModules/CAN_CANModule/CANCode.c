@@ -1,5 +1,5 @@
 /* This file was automatically generated from the LABCAR OPERATOR CAN-Code-Generation*/
-// Generation of Code took: 15,625[ms];
+// Generation of Code took: 9,2873[ms];
 #include <rtos.h>
 #include <ixxat_can.h>
 #include "CANCode.h"
@@ -583,7 +583,7 @@ void CAN_Init()
 	// For frame 'bms_rtcp_sammeln' ID 231
 	InitFrameSignalsStruct ( &( signals_bo0_co0_231std_bms_rtcp_sammeln.Analysis_struct ), dlcParam_bo0_co0_231std_bms_rtcp_sammeln );
 
-	can_handle_board0_controller0 = rtos_comm_open ( "ixxat_can:0/controller=0 btr0=0 btr1=28 stt=1 checkinterval=0.50 initchk=4", 0, 0, 0 );
+	can_handle_board0_controller0 = rtos_comm_open ( "ixxat_can:0/controller=0 btr0=1 btr1=28 stt=1 checkinterval=0.50 initchk=4", 0, 0, 0 );
 	if ( can_handle_board0_controller0 < 0 )
 	{
 		rtos_log( LOG_ERR, "Error in initializing CAN-controller 0 of CAN-board 0\n" );

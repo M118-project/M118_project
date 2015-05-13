@@ -4,7 +4,7 @@
     <PropertySet name="WorkspaceHandling">
       <Property name="OpenMode" type="StringProperty">LastExperiment</Property>
       <Property name="DefaultExperiment" type="StringProperty" />
-      <Property name="LastWorkspaceLocation" type="StringProperty">C:\GR3\lab4_V0.8\Batmodel_HiL\Batmodel_HiL.eew</Property>
+      <Property name="LastWorkspaceLocation" type="StringProperty">C:\GR3\lab4_V0.9\Batmodel_HiL\Batmodel_HiL.eew</Property>
     </PropertySet>
     <PropertySet name="TreeData">
       <Property name="ShowInvisibleDataElements" type="BoolProperty">False</Property>

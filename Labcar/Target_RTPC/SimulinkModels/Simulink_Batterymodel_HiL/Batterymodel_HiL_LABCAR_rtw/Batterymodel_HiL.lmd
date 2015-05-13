@@ -90,6 +90,14 @@
 				StructureType="Scalar" 
 				Dimension="1" />
 
+			<CalibrationVariable Name="Batterymodel_HiL_P.zero_Value" 
+				Visible = "True" 
+				Label="Value" 
+				Path="Batterymodel_HiL/Inputs/Charge Profile/zero"
+				DataType="real64" 
+				StructureType="Scalar" 
+				Dimension="1" />
+
 			<CalibrationVariable Name="Batterymodel_HiL_P.Constant1_Value" 
 				Visible = "True" 
 				Label="Value" 
@@ -788,6 +796,14 @@
 				Visible = "True" 
 				Label="constValue" 
 				Path="Batterymodel_HiL/displays/Vergleich SoC/SoC_Kalman"
+				DataType="real64" 
+				StructureType="Scalar" 
+				Dimension="1" />
+
+			<CalibrationVariable Name="Batterymodel_HiL_P.bat_voltageV_Gain" 
+				Visible = "True" 
+				Label="Gain" 
+				Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [V]"
 				DataType="real64" 
 				StructureType="Scalar" 
 				Dimension="1" />
@@ -1930,6 +1946,15 @@
 				Visible = "True"
 				Label ="Out"
 				Path="Batterymodel_HiL/displays/Batteirespannung/sum_bat_voltage [V]"
+    				DataType="real64"  
+	
+				StructureType="Scalar"
+				Dimension="1" />
+
+								<MeasureVariable Name="Batterymodel_HiL_B.bat_voltageV"
+				Visible = "True"
+				Label ="Out"
+				Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [V]"
     				DataType="real64"  
 	
 				StructureType="Scalar"

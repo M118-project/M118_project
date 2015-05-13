@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.810"
+    ComputedModelVersion    "1.817"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,9 +29,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "user"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 12 19:08:23 2015"
-  RTWModifiedTimeStamp	  353358476
-  ModelVersionFormat	  "1.%<AutoIncrement:810>"
+  LastModifiedDate	  "Wed May 13 14:42:44 2015"
+  RTWModifiedTimeStamp	  353428939
+  ModelVersionFormat	  "1.%<AutoIncrement:817>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -883,7 +883,7 @@ Model {
   }
   System {
     Name		    "Batterymodel_HiL"
-    Location		    [0, 82, 1260, 995]
+    Location		    [12, 109, 1272, 1022]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -897,7 +897,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "126"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "505"
+    SIDHighWatermark	    "517"
     Block {
       BlockType		      Display
       Name		      "Display"
@@ -1470,7 +1470,7 @@ Model {
       System {
 	Name			"Inports Cell_Voltage"
 	Location		[600, 380, 1124, 687]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2710,7 +2710,7 @@ Model {
       System {
 	Name			"Inputs"
 	Location		[10, 82, 632, 462]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2870,10 +2870,11 @@ Model {
 	      BlockType		      MultiPortSwitch
 	      Name		      "Multiport\nSwitch"
 	      SID		      "250"
-	      Ports		      [4, 1]
-	      Position		      [215, 17, 235, 333]
+	      Ports		      [5, 1]
+	      Position		      [215, 15, 235, 415]
 	      ZOrder		      -6
 	      ShowName		      off
+	      Inputs		      "4"
 	      zeroidx		      off
 	      SaturateOnIntegerOverflow	off
 	      Port {
@@ -3002,6 +3003,14 @@ Model {
 	      }
 	    }
 	    Block {
+	      BlockType		      Constant
+	      Name		      "zero"
+	      SID		      "517"
+	      Position		      [80, 360, 110, 390]
+	      ZOrder		      -5
+	      Value		      "0"
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Current [A]"
 	      SID		      "256"
@@ -3015,6 +3024,7 @@ Model {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Multiport\nSwitch"
 	      SrcPort		      1
+	      Points		      [0, -40]
 	      DstBlock		      "Product"
 	      DstPort		      1
 	    }
@@ -3055,6 +3065,12 @@ Model {
 	      SrcPort		      1
 	      DstBlock		      "Multiport\nSwitch"
 	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "zero"
+	      SrcPort		      1
+	      DstBlock		      "Multiport\nSwitch"
+	      DstPort		      5
 	    }
 	  }
 	}
@@ -5277,7 +5293,7 @@ Model {
       System {
 	Name			"battery"
 	Location		[2, 82, 1262, 971]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6737,7 +6753,7 @@ Model {
       System {
 	Name			"displays"
 	Location		[347, 196, 1062, 781]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6787,7 +6803,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Batteirespannung"
-	    Location		    [661, 528, 1107, 801]
+	    Location		    [2, 82, 1262, 971]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6820,6 +6836,22 @@ Model {
 	      SID		      "167"
 	      Position		      [375, 54, 385, 66]
 	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "T3"
+	      SID		      "516"
+	      Position		      [375, 99, 385, 111]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "bat_voltage [V]"
+	      SID		      "515"
+	      Position		      [240, 86, 280, 124]
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -6899,8 +6931,16 @@ Model {
 	    Line {
 	      SrcBlock		      "sum_bat_voltage [V]"
 	      SrcPort		      1
-	      DstBlock		      "bat_voltage [mV]"
-	      DstPort		      1
+	      Points		      [45, 0]
+	      Branch {
+		DstBlock		"bat_voltage [mV]"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"bat_voltage [V]"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "bat_voltage [mV]"
@@ -6931,6 +6971,12 @@ Model {
 	      SrcBlock		      "voltage_system [mV]"
 	      SrcPort		      1
 	      DstBlock		      "voltage_system [V]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "bat_voltage [V]"
+	      SrcPort		      1
+	      DstBlock		      "T3"
 	      DstPort		      1
 	    }
 	  }
@@ -7623,13 +7669,13 @@ Model {
       SrcPort		      3
       Points		      [20, 0]
       Branch {
-	DstBlock		"displays"
-	DstPort			2
-      }
-      Branch {
 	Points			[0, 60]
 	DstBlock		"SoC"
 	DstPort			1
+      }
+      Branch {
+	DstBlock		"displays"
+	DstPort			2
       }
     }
     Line {

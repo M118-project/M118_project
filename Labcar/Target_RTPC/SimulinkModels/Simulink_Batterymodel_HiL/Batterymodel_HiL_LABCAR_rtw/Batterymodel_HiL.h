@@ -3,9 +3,9 @@
  *
  * Code generation for model "Batterymodel_HiL.mdl".
  *
- * Model version              : 1.809
+ * Model version              : 1.816
  * Simulink Coder version : 8.1 (R2011b) 08-Jul-2011
- * C source code generated on : Tue May 12 19:08:03 2015
+ * C source code generated on : Wed May 13 14:42:26 2015
  *
  * Target selection: lcrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -831,6 +831,7 @@ typedef struct {
   real_T SoC_Kalman;                   /* '<S23>/SoC_Kalman' */
   real_T deltaSoC;                     /* '<S23>/delta SoC' */
   real_T sum_bat_voltageV;             /* '<S21>/sum_bat_voltage [V]' */
+  real_T bat_voltageV;                 /* '<S21>/bat_voltage [V]' */
   real_T bat_voltagemV;                /* '<S21>/bat_voltage [mV]' */
   real_T voltage_system;               /* '<S21>/voltage_system' */
   real_T voltage_systemmV;             /* '<S21>/voltage_system [mV]' */
@@ -938,6 +939,9 @@ struct Parameters_Batterymodel_HiL_ {
                                         */
   real_T ChargeCurrentA_Value;         /* Expression: ChargeCurrent
                                         * Referenced by: '<S10>/ChargeCurrent[A]'
+                                        */
+  real_T zero_Value;                   /* Expression: 0
+                                        * Referenced by: '<S10>/zero'
                                         */
   real_T Constant1_Value[12];          /* Expression: ones(CellNo,1)
                                         * Referenced by: '<S10>/Constant1'
@@ -1847,6 +1851,9 @@ struct Parameters_Batterymodel_HiL_ {
                                         */
   real_T SoC_Kalman_P4;                /* Expression: constValue
                                         * Referenced by: '<S23>/SoC_Kalman'
+                                        */
+  real_T bat_voltageV_Gain;            /* Expression: 1
+                                        * Referenced by: '<S21>/bat_voltage [V]'
                                         */
   real_T bat_voltagemV_Gain;           /* Expression: 1000
                                         * Referenced by: '<S21>/bat_voltage [mV]'

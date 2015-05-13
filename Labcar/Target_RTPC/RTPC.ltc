@@ -104,6 +104,7 @@
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Inputs/Charge Profile/ChargeSwitch" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.ChargeSwitch_Value" StructureType="Scalar" Label="Value"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Inputs/Charge Profile/ChargeCurrent[A]1" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.ChargeCurrentA1_Value" StructureType="Scalar" Label="Value"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Inputs/Charge Profile/ChargeCurrent[A]" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.ChargeCurrentA_Value" StructureType="Scalar" Label="Value"/>
+					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Inputs/Charge Profile/zero" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.zero_Value" StructureType="Scalar" Label="Value"/>
 					<CalibrationVariable Dimension="12" Path="Batterymodel_HiL/Inputs/Charge Profile/Constant1" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.Constant1_Value" StructureType="Array" Label="Value"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Outports/Gain1" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.Gain1_Gain" StructureType="Scalar" Label="Gain"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/Outports/Constant" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.Constant_Value" StructureType="Scalar" Label="Value"/>
@@ -161,6 +162,7 @@
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Vergleich SoC/Cellno" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.Cellno_Value" StructureType="Scalar" Label="Value"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Vergleich SoC/SoC_Kalman" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.SoC_Kalman_P3" StructureType="Scalar" Label="b_useConstant"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Vergleich SoC/SoC_Kalman" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.SoC_Kalman_P4" StructureType="Scalar" Label="constValue"/>
+					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [V]" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.bat_voltageV_Gain" StructureType="Scalar" Label="Gain"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [mV]" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.bat_voltagemV_Gain" StructureType="Scalar" Label="Gain"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/voltage_system" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.voltage_system_P3" StructureType="Scalar" Label="b_useConstant"/>
 					<CalibrationVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/voltage_system" Visible="True" DataType="real64" Name="Batterymodel_HiL_P.voltage_system_P4" StructureType="Scalar" Label="constValue"/>
@@ -277,6 +279,7 @@
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Vergleich SoC/SoC_Kalman" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.SoC_Kalman" StructureType="Scalar" Label="Out"/>
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Vergleich SoC/delta SoC" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.deltaSoC" StructureType="Scalar" Label="Out"/>
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/sum_bat_voltage [V]" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.sum_bat_voltageV" StructureType="Scalar" Label="Out"/>
+					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [V]" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.bat_voltageV" StructureType="Scalar" Label="Out"/>
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/bat_voltage [mV]" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.bat_voltagemV" StructureType="Scalar" Label="Out"/>
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/voltage_system" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.voltage_system" StructureType="Scalar" Label="Out"/>
 					<MeasureVariable Dimension="1" Path="Batterymodel_HiL/displays/Batteirespannung/voltage_system [mV]" Visible="True" DataType="real64" Name="Batterymodel_HiL_B.voltage_systemmV" StructureType="Scalar" Label="Out"/>
@@ -1584,7 +1587,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1593,7 +1596,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1602,7 +1605,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1611,7 +1614,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1620,7 +1623,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1629,7 +1632,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1638,7 +1641,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1647,7 +1650,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1656,7 +1659,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1665,7 +1668,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1674,7 +1677,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1683,7 +1686,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1692,7 +1695,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1701,7 +1704,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1710,7 +1713,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1719,7 +1722,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1728,7 +1731,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1737,7 +1740,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1746,7 +1749,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1755,7 +1758,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1764,7 +1767,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1773,7 +1776,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1782,7 +1785,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1791,7 +1794,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1800,7 +1803,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1809,7 +1812,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1818,7 +1821,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1827,7 +1830,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1836,7 +1839,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1845,7 +1848,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1854,7 +1857,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1863,7 +1866,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1872,7 +1875,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1881,7 +1884,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1890,7 +1893,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1899,7 +1902,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1908,7 +1911,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1917,7 +1920,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1926,7 +1929,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1935,7 +1938,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1944,7 +1947,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1953,7 +1956,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1962,7 +1965,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="1.1"/>
+						<Initial Mode="CONST" Value="1.1"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1971,7 +1974,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1980,7 +1983,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0"/>
+						<Initial Mode="CONST" Value="0"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1989,7 +1992,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -1998,7 +2001,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -2007,7 +2010,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>
@@ -2016,7 +2019,7 @@
 						<DataType Name="real64"/>
 						<StructureType Name="Scalar"/>
 						<Dimension Value="1"/>
-						<Initial Value="0.0000000000000000e+000"/>
+						<Initial Mode="MODEL" Value="0.0000000000000000e+000"/>
 						<Type Name="RTIO"/>
 						<Process Name="CAN_Send_board0_controller0"/>
 					</Inport>

@@ -3,9 +3,9 @@
  *
  * Code generation for model "Batterymodel_HiL.mdl".
  *
- * Model version              : 1.809
+ * Model version              : 1.816
  * Simulink Coder version : 8.1 (R2011b) 08-Jul-2011
- * C source code generated on : Tue May 12 19:08:03 2015
+ * C source code generated on : Wed May 13 14:42:26 2015
  *
  * Target selection: lcrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -87,6 +87,7 @@ static void Batterymodel_HiL_output(int_T tid)
    *  Constant: '<S10>/ChargeCurrent[A]'
    *  Constant: '<S10>/ChargeCurrent[A]1'
    *  Constant: '<S10>/ChargeSwitch'
+   *  Constant: '<S10>/zero'
    */
   switch ((int32_T)Batterymodel_HiL_P.ChargeSwitch_Value) {
    case 1:
@@ -97,8 +98,12 @@ static void Batterymodel_HiL_output(int_T tid)
     Batterymodel_HiL_B.ChargeCurrentA = Batterymodel_HiL_P.ChargeCurrentA_Value;
     break;
 
-   default:
+   case 3:
     Batterymodel_HiL_B.ChargeCurrentA = Batterymodel_HiL_B.FromWs;
+    break;
+
+   default:
+    Batterymodel_HiL_B.ChargeCurrentA = Batterymodel_HiL_P.zero_Value;
     break;
   }
 
@@ -749,6 +754,10 @@ static void Batterymodel_HiL_output(int_T tid)
   Batterymodel_HiL_B.sum_bat_voltageV = current;
 
   /* End of Sum: '<S21>/sum_bat_voltage [V]' */
+
+  /* Gain: '<S21>/bat_voltage [V]' */
+  Batterymodel_HiL_B.bat_voltageV = Batterymodel_HiL_P.bat_voltageV_Gain *
+    Batterymodel_HiL_B.sum_bat_voltageV;
 
   /* Gain: '<S21>/bat_voltage [mV]' */
   Batterymodel_HiL_B.bat_voltagemV = Batterymodel_HiL_P.bat_voltagemV_Gain *
@@ -1883,6 +1892,7 @@ void Batterymodel_HiL_initialize(boolean_T firstTime)
     Batterymodel_HiL_B.SoC_Kalman = 0.0;
     Batterymodel_HiL_B.deltaSoC = 0.0;
     Batterymodel_HiL_B.sum_bat_voltageV = 0.0;
+    Batterymodel_HiL_B.bat_voltageV = 0.0;
     Batterymodel_HiL_B.bat_voltagemV = 0.0;
     Batterymodel_HiL_B.voltage_system = 0.0;
     Batterymodel_HiL_B.voltage_systemmV = 0.0;
@@ -10598,9 +10608,9 @@ void MdlInitializeSizes(void)
   Batterymodel_HiL_M->Sizes.numU = (0);/* Number of model inputs */
   Batterymodel_HiL_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   Batterymodel_HiL_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  Batterymodel_HiL_M->Sizes.numBlocks = (163);/* Number of blocks */
-  Batterymodel_HiL_M->Sizes.numBlockIO = (90);/* Number of block outputs */
-  Batterymodel_HiL_M->Sizes.numBlockPrms = (2118);/* Sum of parameter "widths" */
+  Batterymodel_HiL_M->Sizes.numBlocks = (165);/* Number of blocks */
+  Batterymodel_HiL_M->Sizes.numBlockIO = (91);/* Number of block outputs */
+  Batterymodel_HiL_M->Sizes.numBlockPrms = (2120);/* Sum of parameter "widths" */
 }
 
 void MdlInitializeSampleTimes(void)

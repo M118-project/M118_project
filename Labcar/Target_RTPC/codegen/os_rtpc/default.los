@@ -35,8 +35,8 @@
 	</Task>
 	<Task Period="0.01" CoreExclusive="0" MaxActivations="1" Priority="3" Type="Timer" Autostart="1" FloatingPointException="0" Name="TaskDVEModel" CPU-Core="1" Delay="0" State="enabled" Scheduling="Preemptive">
 		<Processes>
-			<Process Target="RTPC" Valid="true" Module="CANModule" Name="CAN_Receive_board0_controller0"/>
 			<Process Target="RTPC" Valid="true" Module="CANModule" Name="CAN_Receive_board0_controller1"/>
+			<Process Target="RTPC" Valid="true" Module="CANModule" Name="CAN_Receive_board0_controller0"/>
 			<Process Target="RTPC" Valid="true" Module="Hardware" Name="Es113x_SyncReceiveCode_TaskDVEModel_HWCF"/>
 			<Process Target="RTPC" Valid="true" Module="Batterymodel_HiL" Name="lcrt_OneStep_Outputs_Batterymodel_HiL"/>
 			<Process Target="RTPC" Valid="true" Module="Hardware" Name="Es113x_SyncSendCode_TaskDVEModel_HWCF"/>

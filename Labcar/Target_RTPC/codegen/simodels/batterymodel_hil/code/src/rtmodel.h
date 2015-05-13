@@ -3,9 +3,9 @@
  *
  * Code generation for model "Batterymodel_HiL.mdl".
  *
- * Model version              : 1.809
+ * Model version              : 1.816
  * Simulink Coder version : 8.1 (R2011b) 08-Jul-2011
- * C source code generated on : Tue May 12 19:08:03 2015
+ * C source code generated on : Wed May 13 14:42:26 2015
  *
  * Target selection: lcrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

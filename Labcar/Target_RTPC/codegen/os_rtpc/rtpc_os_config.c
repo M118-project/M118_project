@@ -1,6 +1,6 @@
 /*
  * File rtpc_os_config.c generated from default.los
- * Date: Tue May 12 19:08:34 2015
+ * Date: Wed May 13 14:43:02 2015
  *
  */
 
@@ -291,8 +291,8 @@ static const rtpc_task_t rtpc_task_def_TaskDVEModel = {
 	.processname_list = rtpc_processname_list_TaskDVEModel,
 };
 
-extern void CAN_Receive_board0_controller0(void);
 extern void CAN_Receive_board0_controller1(void);
+extern void CAN_Receive_board0_controller0(void);
 extern void Es113x_SyncReceiveCode_TaskDVEModel_HWCF(void);
 extern void lcrt_OneStep_Outputs_Batterymodel_HiL(void);
 extern void Es113x_SyncSendCode_TaskDVEModel_HWCF(void);
@@ -300,8 +300,8 @@ extern void lcrt_OneStep_States_Batterymodel_HiL(void);
 
 static const rtpc_process_t rtpc_process_list_TaskDVEModel[] = 
 {
-	CAN_Receive_board0_controller0,
 	CAN_Receive_board0_controller1,
+	CAN_Receive_board0_controller0,
 	Es113x_SyncReceiveCode_TaskDVEModel_HWCF,
 	lcrt_OneStep_Outputs_Batterymodel_HiL,
 	Es113x_SyncSendCode_TaskDVEModel_HWCF,
@@ -311,8 +311,8 @@ static const rtpc_process_t rtpc_process_list_TaskDVEModel[] =
 
 static const char * const rtpc_processname_list_TaskDVEModel[] = 
 {
-	"CAN_Receive_board0_controller0",
 	"CAN_Receive_board0_controller1",
+	"CAN_Receive_board0_controller0",
 	"Es113x_SyncReceiveCode_TaskDVEModel_HWCF",
 	"lcrt_OneStep_Outputs_Batterymodel_HiL",
 	"Es113x_SyncSendCode_TaskDVEModel_HWCF",
