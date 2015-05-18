@@ -21,7 +21,11 @@ n_cells=12;
 delta_max_v_cell=1;
 
 V_min_cell = uint16(2800); % minimal cell voltage [mV]
-V_max_cell = uint16(4090); % maximum cell voltage [mV]
+
+%V_max_cell = uint16(4090); % maximum cell voltage [mV]
+%TEST
+V_max_cell = uint16(3300); % maximum cell voltage [mV]
+%TEST ENDE
 V_delta_max_cell = uint16(100); % maximum cell voltage dif-
 % ference [mV]
 T_min_cell = uint16(273); % min. cell temperature [K]

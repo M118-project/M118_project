@@ -186,7 +186,7 @@ static void sf_c4_MiL_BMS_Bat(SFc4_MiL_BMS_BatInstanceStruct *chartInstance)
   c4_b_y = (real_T (*)[12])ssGetOutputPortSignal(chartInstance->S, 1);
   c4_b_SoC = (real_T (*)[12])ssGetInputPortSignal(chartInstance->S, 0);
   _sfTime_ = (real_T)ssGetT(chartInstance->S);
-  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 2U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
   for (c4_i2 = 0; c4_i2 < 12; c4_i2++) {
     _SFD_DATA_RANGE_CHECK((*c4_b_SoC)[c4_i2], 0U);
   }
@@ -200,7 +200,7 @@ static void sf_c4_MiL_BMS_Bat(SFc4_MiL_BMS_BatInstanceStruct *chartInstance)
   }
 
   chartInstance->c4_sfEvent = CALL_EVENT;
-  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 2U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
   for (c4_i5 = 0; c4_i5 < 12; c4_i5++) {
     c4_SoC[c4_i5] = (*c4_b_SoC)[c4_i5];
   }
@@ -248,7 +248,7 @@ static void sf_c4_MiL_BMS_Bat(SFc4_MiL_BMS_BatInstanceStruct *chartInstance)
     (*c4_b_y)[c4_i11] = c4_y[c4_i11];
   }
 
-  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 2U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
   sf_debug_check_for_state_inconsistency(_MiL_BMS_BatMachineNumber_,
     chartInstance->chartNumber, chartInstance->instanceNumber);
 }

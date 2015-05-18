@@ -28,8 +28,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "user"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 22 16:45:18 2015"
-  RTWModifiedTimeStamp	  351617075
+  LastModifiedDate	  "Wed Apr 22 17:09:38 2015"
+  RTWModifiedTimeStamp	  353846095
   ModelVersionFormat	  "v3"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -900,8 +900,8 @@ Model {
   }
   System {
     Name		    "MiL_BMS_Bat"
-    Location		    [196, 74, 1430, 856]
-    Open		    off
+    Location		    [196, 74, 1412, 772]
+    Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -914,7 +914,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "551"
+    SIDHighWatermark	    "552"
     Block {
       BlockType		      SubSystem
       Name		      "BMS"
@@ -932,8 +932,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"BMS"
-	Location		[196, 74, 1369, 856]
-	Open			off
+	Location		[196, 74, 1369, 772]
+	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	202
 	ScreenColor		"white"
@@ -1067,7 +1067,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Master"
-	    Location		    [196, 74, 1424, 856]
+	    Location		    [196, 74, 1369, 772]
 	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1462,8 +1462,8 @@ Model {
 	      MaskHideContents	      off
 	      System {
 		Name			"Limit monitoring"
-		Location		[196, 74, 1430, 856]
-		Open			off
+		Location		[196, 70, 1422, 732]
+		Open			on
 		ModelBrowserVisibility	on
 		ModelBrowserWidth	194
 		ScreenColor		"white"
@@ -1787,7 +1787,7 @@ Model {
 		  Name			  "Display2"
 		  SID			  "546"
 		  Ports			  [1]
-		  Position		  [775, 222, 1165, 258]
+		  Position		  [750, 213, 1540, 267]
 		  ZOrder		  -1
 		  Decimation		  "1"
 		  Lockdown		  off
@@ -2424,7 +2424,7 @@ Model {
 		    DstPort		    1
 		  }
 		  Branch {
-		    Points		    [0, 5; 5, 0; 0, -65]
+		    Points		    [0, 5; 5, 0]
 		    DstBlock		    "Display2"
 		    DstPort		    1
 		  }
@@ -2890,7 +2890,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "error"
 	      SID		      "212"
-	      Position		      [595, 288, 625, 302]
+	      Position		      [595, 293, 625, 307]
 	      ZOrder		      6
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -3004,7 +3004,7 @@ Model {
 	    Line {
 	      SrcBlock		      "Limit monitoring"
 	      SrcPort		      1
-	      Points		      [0, 10]
+	      Points		      [0, 15]
 	      DstBlock		      "error"
 	      DstPort		      1
 	    }
@@ -3159,7 +3159,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Batteriemodell"
-	Location		[257, 74, 1430, 856]
+	Location		[257, 74, 1430, 772]
 	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -4625,7 +4625,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Inputs"
-	Location		[257, 74, 1430, 856]
+	Location		[196, 74, 1369, 856]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	212
@@ -4656,7 +4656,7 @@ Model {
 	  System {
 	    Name		    "Charge Profile"
 	    Location		    [209, 82, 1269, 780]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5153,7 +5153,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From"
 	  SID			  "332"
-	  Position		  [25, 16, 140, 54]
+	  Position		  [35, 221, 150, 259]
 	  ZOrder		  -4
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5170,7 +5170,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From1"
 	  SID			  "287"
-	  Position		  [35, 183, 140, 217]
+	  Position		  [35, 358, 140, 392]
 	  ZOrder		  43
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5181,7 +5181,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From10"
 	  SID			  "225"
-	  Position		  [600, 63, 725, 97]
+	  Position		  [30, 98, 155, 132]
 	  ZOrder		  28
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5192,7 +5192,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From11"
 	  SID			  "226"
-	  Position		  [600, 111, 725, 149]
+	  Position		  [30, 141, 155, 179]
 	  ZOrder		  27
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5203,7 +5203,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From12"
 	  SID			  "227"
-	  Position		  [600, 16, 725, 54]
+	  Position		  [30, 51, 155, 89]
 	  ZOrder		  26
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5214,7 +5214,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From13"
 	  SID			  "384"
-	  Position		  [370, 748, 545, 792]
+	  Position		  [370, 923, 545, 967]
 	  ZOrder		  -8
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5224,7 +5224,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From14"
 	  SID			  "388"
-	  Position		  [60, 751, 180, 789]
+	  Position		  [60, 926, 180, 964]
 	  ZOrder		  -8
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5234,7 +5234,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From15"
 	  SID			  "394"
-	  Position		  [15, 487, 105, 523]
+	  Position		  [15, 662, 105, 698]
 	  ZOrder		  -8
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5245,7 +5245,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From16"
 	  SID			  "339"
-	  Position		  [730, 751, 850, 789]
+	  Position		  [730, 926, 850, 964]
 	  ZOrder		  -8
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5256,7 +5256,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From2"
 	  SID			  "369"
-	  Position		  [510, 183, 615, 217]
+	  Position		  [510, 358, 615, 392]
 	  ZOrder		  43
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5267,7 +5267,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From3"
 	  SID			  "370"
-	  Position		  [740, 183, 860, 217]
+	  Position		  [740, 358, 860, 392]
 	  ZOrder		  22
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5277,7 +5277,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From4"
 	  SID			  "371"
-	  Position		  [510, 443, 615, 477]
+	  Position		  [510, 618, 615, 652]
 	  ZOrder		  43
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5288,7 +5288,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From5"
 	  SID			  "333"
-	  Position		  [25, 81, 140, 119]
+	  Position		  [35, 286, 150, 324]
 	  ZOrder		  -5
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5305,17 +5305,18 @@ Model {
 	  BlockType		  From
 	  Name			  "From6"
 	  SID			  "196"
-	  Position		  [265, 183, 385, 217]
+	  Position		  [265, 358, 385, 392]
 	  ZOrder		  22
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "cell_temperatures"
+	  TagVisibility		  "global"
 	}
 	Block {
 	  BlockType		  From
 	  Name			  "From7"
 	  SID			  "391"
-	  Position		  [20, 621, 105, 659]
+	  Position		  [20, 796, 105, 834]
 	  ZOrder		  -8
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5326,7 +5327,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From8"
 	  SID			  "364"
-	  Position		  [265, 443, 385, 477]
+	  Position		  [265, 618, 385, 652]
 	  ZOrder		  22
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5337,7 +5338,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From9"
 	  SID			  "372"
-	  Position		  [740, 443, 860, 477]
+	  Position		  [740, 618, 860, 652]
 	  ZOrder		  22
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
@@ -5349,7 +5350,7 @@ Model {
 	  Name			  "Mux"
 	  SID			  "345"
 	  Ports			  [2, 1]
-	  Position		  [325, 37, 330, 168]
+	  Position		  [335, 212, 340, 343]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5360,7 +5361,7 @@ Model {
 	  Name			  "Num balanced cells"
 	  SID			  "346"
 	  Ports			  [1]
-	  Position		  [880, 724, 965, 746]
+	  Position		  [880, 899, 965, 921]
 	  ZOrder		  -11
 	  NamePlacement		  "alternate"
 	  Decimation		  "1"
@@ -5371,7 +5372,7 @@ Model {
 	  Name			  "OCV_Cells"
 	  SID			  "376"
 	  Ports			  [1]
-	  Position		  [635, 449, 720, 681]
+	  Position		  [635, 624, 720, 856]
 	  ZOrder		  44
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5381,7 +5382,7 @@ Model {
 	  Name			  "SoC"
 	  SID			  "347"
 	  Ports			  [1]
-	  Position		  [390, 74, 455, 136]
+	  Position		  [400, 249, 465, 311]
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [5, 45, 1281, 696]
@@ -5414,7 +5415,7 @@ Model {
 	  Name			  "SoC Extended Kalman Filter"
 	  SID			  "348"
 	  Ports			  [1]
-	  Position		  [190, 85, 280, 115]
+	  Position		  [200, 290, 290, 320]
 	  ZOrder		  -14
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5424,7 +5425,7 @@ Model {
 	  Name			  "SoC Modell"
 	  SID			  "349"
 	  Ports			  [1]
-	  Position		  [190, 20, 280, 50]
+	  Position		  [200, 225, 290, 255]
 	  ZOrder		  1
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5434,7 +5435,7 @@ Model {
 	  Name			  "ambient temperature"
 	  SID			  "389"
 	  Ports			  [1]
-	  Position		  [215, 729, 300, 751]
+	  Position		  [215, 904, 300, 926]
 	  ZOrder		  -11
 	  NamePlacement		  "alternate"
 	  Decimation		  "1"
@@ -5445,7 +5446,7 @@ Model {
 	  Name			  "ambient_temperature"
 	  SID			  "390"
 	  Ports			  [1]
-	  Position		  [225, 759, 290, 821]
+	  Position		  [225, 934, 290, 996]
 	  ZOrder		  -18
 	  Floating		  off
 	  Location		  [124, 199, 950, 775]
@@ -5478,7 +5479,7 @@ Model {
 	  Name			  "balance current"
 	  SID			  "380"
 	  Ports			  [1]
-	  Position		  [520, 549, 585, 611]
+	  Position		  [520, 724, 585, 786]
 	  ZOrder		  42
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5512,7 +5513,7 @@ Model {
 	  Name			  "balance vector"
 	  SID			  "378"
 	  Ports			  [1]
-	  Position		  [765, 549, 830, 611]
+	  Position		  [765, 724, 830, 786]
 	  ZOrder		  16
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5546,7 +5547,7 @@ Model {
 	  Name			  "balance_vectcr"
 	  SID			  "374"
 	  Ports			  [1]
-	  Position		  [880, 446, 965, 684]
+	  Position		  [880, 621, 965, 859]
 	  ZOrder		  24
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5556,7 +5557,7 @@ Model {
 	  Name			  "bat current"
 	  SID			  "392"
 	  Ports			  [1]
-	  Position		  [130, 599, 215, 621]
+	  Position		  [130, 774, 215, 796]
 	  ZOrder		  -11
 	  NamePlacement		  "alternate"
 	  Decimation		  "1"
@@ -5567,7 +5568,7 @@ Model {
 	  Name			  "bat voltage"
 	  SID			  "395"
 	  Ports			  [1]
-	  Position		  [130, 464, 215, 486]
+	  Position		  [130, 639, 215, 661]
 	  ZOrder		  -11
 	  NamePlacement		  "alternate"
 	  Decimation		  "1"
@@ -5578,7 +5579,7 @@ Model {
 	  Name			  "bat_current"
 	  SID			  "393"
 	  Ports			  [1]
-	  Position		  [140, 629, 205, 691]
+	  Position		  [140, 804, 205, 866]
 	  ZOrder		  -18
 	  Floating		  off
 	  Location		  [124, 199, 950, 775]
@@ -5611,7 +5612,7 @@ Model {
 	  Name			  "bat_voltage"
 	  SID			  "396"
 	  Ports			  [1]
-	  Position		  [140, 494, 205, 556]
+	  Position		  [140, 669, 205, 731]
 	  ZOrder		  -18
 	  Floating		  off
 	  Location		  [124, 199, 950, 775]
@@ -5644,7 +5645,7 @@ Model {
 	  Name			  "cell current"
 	  SID			  "375"
 	  Ports			  [1]
-	  Position		  [635, 187, 720, 423]
+	  Position		  [635, 362, 720, 598]
 	  ZOrder		  44
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5654,7 +5655,7 @@ Model {
 	  Name			  "cell temperatures"
 	  SID			  "194"
 	  Ports			  [1]
-	  Position		  [405, 187, 490, 423]
+	  Position		  [405, 362, 490, 598]
 	  ZOrder		  24
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5664,7 +5665,7 @@ Model {
 	  Name			  "cell voltages"
 	  SID			  "288"
 	  Ports			  [1]
-	  Position		  [160, 188, 245, 422]
+	  Position		  [160, 363, 245, 597]
 	  ZOrder		  44
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5674,7 +5675,7 @@ Model {
 	  Name			  "cell_current"
 	  SID			  "379"
 	  Ports			  [1]
-	  Position		  [520, 289, 585, 351]
+	  Position		  [520, 464, 585, 526]
 	  ZOrder		  42
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5708,7 +5709,7 @@ Model {
 	  Name			  "cell_temperatures"
 	  SID			  "202"
 	  Ports			  [1]
-	  Position		  [290, 289, 355, 351]
+	  Position		  [290, 464, 355, 526]
 	  ZOrder		  16
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5742,7 +5743,7 @@ Model {
 	  Name			  "cell_voltages"
 	  SID			  "289"
 	  Ports			  [1]
-	  Position		  [45, 289, 110, 351]
+	  Position		  [45, 464, 110, 526]
 	  ZOrder		  42
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5775,7 +5776,7 @@ Model {
 	  Name			  "current profile"
 	  SID			  "377"
 	  Ports			  [1]
-	  Position		  [765, 289, 830, 351]
+	  Position		  [765, 464, 830, 526]
 	  ZOrder		  16
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5809,7 +5810,7 @@ Model {
 	  Name			  "current_profile"
 	  SID			  "373"
 	  Ports			  [1]
-	  Position		  [880, 188, 965, 422]
+	  Position		  [880, 363, 965, 597]
 	  ZOrder		  24
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5819,7 +5820,7 @@ Model {
 	  Name			  "error"
 	  SID			  "229"
 	  Ports			  [1]
-	  Position		  [750, 23, 860, 57]
+	  Position		  [180, 56, 275, 84]
 	  ZOrder		  31
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5829,7 +5830,7 @@ Model {
 	  Name			  "error_code"
 	  SID			  "228"
 	  Ports			  [1]
-	  Position		  [750, 67, 850, 93]
+	  Position		  [180, 99, 960, 131]
 	  ZOrder		  30
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5839,7 +5840,7 @@ Model {
 	  Name			  "error_index"
 	  SID			  "224"
 	  Ports			  [1]
-	  Position		  [750, 115, 840, 145]
+	  Position		  [180, 148, 1140, 182]
 	  ZOrder		  29
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5849,7 +5850,7 @@ Model {
 	  Name			  "init SoC1"
 	  SID			  "367"
 	  Ports			  [1]
-	  Position		  [290, 549, 355, 611]
+	  Position		  [290, 724, 355, 786]
 	  ZOrder		  16
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -5883,7 +5884,7 @@ Model {
 	  Name			  "init ambient temperature"
 	  SID			  "385"
 	  Ports			  [1]
-	  Position		  [575, 724, 660, 746]
+	  Position		  [575, 899, 660, 921]
 	  ZOrder		  -11
 	  NamePlacement		  "alternate"
 	  Decimation		  "1"
@@ -5894,7 +5895,7 @@ Model {
 	  Name			  "init_SoC1"
 	  SID			  "365"
 	  Ports			  [1]
-	  Position		  [405, 447, 490, 673]
+	  Position		  [405, 622, 490, 848]
 	  ZOrder		  24
 	  Decimation		  "1"
 	  Lockdown		  off
@@ -5904,7 +5905,7 @@ Model {
 	  Name			  "init_ambient_temperature"
 	  SID			  "386"
 	  Ports			  [1]
-	  Position		  [585, 759, 650, 821]
+	  Position		  [585, 934, 650, 996]
 	  ZOrder		  -18
 	  Floating		  off
 	  Location		  [124, 199, 950, 775]
@@ -5937,7 +5938,7 @@ Model {
 	  Name			  "num_ balanced_cells"
 	  SID			  "362"
 	  Ports			  [1]
-	  Position		  [890, 764, 955, 826]
+	  Position		  [890, 939, 955, 1001]
 	  ZOrder		  -18
 	  Floating		  off
 	  Location		  [124, 199, 950, 775]
@@ -5988,13 +5989,13 @@ Model {
 	Line {
 	  SrcBlock		  "From11"
 	  SrcPort		  1
+	  Points		  [5, 0]
 	  DstBlock		  "error_index"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From12"
 	  SrcPort		  1
-	  Points		  [5, 0]
 	  DstBlock		  "error"
 	  DstPort		  1
 	}
@@ -6034,7 +6035,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    Points		    [0, 35]
+	    Points		    [0, 5]
 	    DstBlock		    "Mux"
 	    DstPort		    2
 	  }
@@ -6054,7 +6055,7 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 35]
+	    Points		    [0, 5]
 	    DstBlock		    "Mux"
 	    DstPort		    1
 	  }
@@ -6197,7 +6198,7 @@ Model {
 	  Name			  "--------------------------------------\nError code legend\n11 = cell voltage low\n12 = cell voltage high\n"
 	  "21 = cell temperature low\n22 = cell temperature high\n31 = battery current low\n32 = battery current high\n41 = ba"
 	  "ttery voltage low\n42 = battery voltage high\n--------------------------------------"
-	  Position		  [925, 95]
+	  Position		  [575, 270]
 	}
       }
     }
@@ -6321,8 +6322,8 @@ MatData {
     "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
     "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
     "   \"     8         !0    @               $         \"0         .    .     8    (    !@         %    \"     $    !"
-    "     0         )    \"         \"  @A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
-    "    \" !-![0 X    P    !@    @    &          4    (               !          D         "
+    "     0         )    \"        \"@ +K5 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "     8 .&V0 X    P    !@    @    &          4    (               !          D         "
   }
   DataRecord {
     Tag			    DataTag0
@@ -6408,8 +6409,6 @@ Stateflow {
     created		    "29-Mar-2012 10:50:29"
     isLibrary		    0
     firstTarget		    50
-    debug {
-    }
     sfVersion		    76014001.0002
   }
   chart {
@@ -6816,7 +6815,7 @@ Stateflow {
       " )\n    error_code(index) = uint8(42); \n    index=index+1;\nerror_index=ones(1,length(cell_voltage_in));\n    %"
       "error_matrix(4,:)=uint8(41)*ones(1,12)\nend;\n    \nerror_out=0;\n\nerror_code_out=error_code;\nerror_index_out="
       "error_index;"
-      editorLayout	      "100 M4x1[2 29 1448 880]"
+      editorLayout	      "100 M4x1[2 29 1448 808]"
     }
   }
   junction {

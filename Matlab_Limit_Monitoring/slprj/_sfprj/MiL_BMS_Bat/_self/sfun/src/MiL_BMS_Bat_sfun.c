@@ -3,8 +3,8 @@
 #include "MiL_BMS_Bat_sfun.h"
 #include "c1_MiL_BMS_Bat.h"
 #include "c2_MiL_BMS_Bat.h"
+#include "c3_MiL_BMS_Bat.h"
 #include "c4_MiL_BMS_Bat.h"
-#include "c12_MiL_BMS_Bat.h"
 
 /* Type Definitions */
 
@@ -41,13 +41,13 @@ unsigned int sf_MiL_BMS_Bat_method_dispatcher(SimStruct *simstructPtr, unsigned
     return 1;
   }
 
-  if (chartFileNumber==4) {
-    c4_MiL_BMS_Bat_method_dispatcher(simstructPtr, method, data);
+  if (chartFileNumber==3) {
+    c3_MiL_BMS_Bat_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
-  if (chartFileNumber==12) {
-    c12_MiL_BMS_Bat_method_dispatcher(simstructPtr, method, data);
+  if (chartFileNumber==4) {
+    c4_MiL_BMS_Bat_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -84,10 +84,10 @@ unsigned int sf_MiL_BMS_Bat_process_check_sum_call( int nlhs, mxArray * plhs[],
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2802859475U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1055069044U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2345976775U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(4233881349U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2297113298U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(486717198U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1797800694U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1324332520U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -106,17 +106,17 @@ unsigned int sf_MiL_BMS_Bat_process_check_sum_call( int nlhs, mxArray * plhs[],
           break;
         }
 
+       case 3:
+        {
+          extern void sf_c3_MiL_BMS_Bat_get_check_sum(mxArray *plhs[]);
+          sf_c3_MiL_BMS_Bat_get_check_sum(plhs);
+          break;
+        }
+
        case 4:
         {
           extern void sf_c4_MiL_BMS_Bat_get_check_sum(mxArray *plhs[]);
           sf_c4_MiL_BMS_Bat_get_check_sum(plhs);
-          break;
-        }
-
-       case 12:
-        {
-          extern void sf_c12_MiL_BMS_Bat_get_check_sum(mxArray *plhs[]);
-          sf_c12_MiL_BMS_Bat_get_check_sum(plhs);
           break;
         }
 
@@ -135,10 +135,10 @@ unsigned int sf_MiL_BMS_Bat_process_check_sum_call( int nlhs, mxArray * plhs[],
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(27006558U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3627219509U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2206236686U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(30914698U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(943682443U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2274823639U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2416046085U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(565473908U);
   }
 
   return 1;
@@ -198,11 +198,11 @@ unsigned int sf_MiL_BMS_Bat_autoinheritance_info( int nlhs, mxArray * plhs[],
         break;
       }
 
-     case 4:
+     case 3:
       {
-        if (strcmp(aiChksum, "3fV3pMrJ33HZFBM3U9UgbF") == 0) {
-          extern mxArray *sf_c4_MiL_BMS_Bat_get_autoinheritance_info(void);
-          plhs[0] = sf_c4_MiL_BMS_Bat_get_autoinheritance_info();
+        if (strcmp(aiChksum, "M0P6JY4LMAnuHolvySDFzG") == 0) {
+          extern mxArray *sf_c3_MiL_BMS_Bat_get_autoinheritance_info(void);
+          plhs[0] = sf_c3_MiL_BMS_Bat_get_autoinheritance_info();
           break;
         }
 
@@ -210,11 +210,11 @@ unsigned int sf_MiL_BMS_Bat_autoinheritance_info( int nlhs, mxArray * plhs[],
         break;
       }
 
-     case 12:
+     case 4:
       {
-        if (strcmp(aiChksum, "daJ2yPOQ0Lm8ig14kcsdcD") == 0) {
-          extern mxArray *sf_c12_MiL_BMS_Bat_get_autoinheritance_info(void);
-          plhs[0] = sf_c12_MiL_BMS_Bat_get_autoinheritance_info();
+        if (strcmp(aiChksum, "3fV3pMrJ33HZFBM3U9UgbF") == 0) {
+          extern mxArray *sf_c4_MiL_BMS_Bat_get_autoinheritance_info(void);
+          plhs[0] = sf_c4_MiL_BMS_Bat_get_autoinheritance_info();
           break;
         }
 
@@ -279,23 +279,23 @@ unsigned int sf_MiL_BMS_Bat_get_eml_resolved_functions_info( int nlhs, mxArray *
         break;
       }
 
+     case 3:
+      {
+        extern const mxArray *sf_c3_MiL_BMS_Bat_get_eml_resolved_functions_info
+          (void);
+        mxArray *persistentMxArray = (mxArray *)
+          sf_c3_MiL_BMS_Bat_get_eml_resolved_functions_info();
+        plhs[0] = mxDuplicateArray(persistentMxArray);
+        mxDestroyArray(persistentMxArray);
+        break;
+      }
+
      case 4:
       {
         extern const mxArray *sf_c4_MiL_BMS_Bat_get_eml_resolved_functions_info
           (void);
         mxArray *persistentMxArray = (mxArray *)
           sf_c4_MiL_BMS_Bat_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
-     case 12:
-      {
-        extern const mxArray *sf_c12_MiL_BMS_Bat_get_eml_resolved_functions_info
-          (void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c12_MiL_BMS_Bat_get_eml_resolved_functions_info();
         plhs[0] = mxDuplicateArray(persistentMxArray);
         mxDestroyArray(persistentMxArray);
         break;

@@ -10,8 +10,8 @@ OBJECTS = \
 	"MiL_BMS_Bat_sfun_registry.obj"\
 	"c1_MiL_BMS_Bat.obj"\
 	"c2_MiL_BMS_Bat.obj"\
+	"c3_MiL_BMS_Bat.obj"\
 	"c4_MiL_BMS_Bat.obj"\
-	"c12_MiL_BMS_Bat.obj"\
 	"lccstub.obj"\
 	"C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccdef.def"\
 	"C:\Program Files\MATLAB\R2011b\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
@@ -37,9 +37,9 @@ c1_MiL_BMS_Bat.obj :	"c1_MiL_BMS_Bat.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_MiL_BMS_Bat.c"
 c2_MiL_BMS_Bat.obj :	"c2_MiL_BMS_Bat.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_MiL_BMS_Bat.c"
+c3_MiL_BMS_Bat.obj :	"c3_MiL_BMS_Bat.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_MiL_BMS_Bat.c"
 c4_MiL_BMS_Bat.obj :	"c4_MiL_BMS_Bat.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_MiL_BMS_Bat.c"
-c12_MiL_BMS_Bat.obj :	"c12_MiL_BMS_Bat.c"
-	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c12_MiL_BMS_Bat.c"
 lccstub.obj :	"C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccstub.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccstub.c"
