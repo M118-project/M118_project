@@ -26,7 +26,6 @@ typedef struct {
   boolean_T c3_doneDoubleBufferReInit;
   boolean_T c3_isStable;
   boolean_T c3_timer_not_empty;
-  uint8_T c3_CellNo;
   uint8_T c3_is_active_c3_Batman_Code;
   uint8_T c3_timer;
   ChartInfoStruct chartInfo;

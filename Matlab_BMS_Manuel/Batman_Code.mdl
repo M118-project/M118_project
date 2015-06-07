@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3761"
+    ComputedModelVersion    "1.3810"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,16 +31,16 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "user"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 29 10:45:39 2015"
-  RTWModifiedTimeStamp	  354794120
-  ModelVersionFormat	  "1.%<AutoIncrement:3761>"
+  LastModifiedDate	  "Mon Jun 01 09:40:52 2015"
+  RTWModifiedTimeStamp	  355052116
+  ModelVersionFormat	  "1.%<AutoIncrement:3810>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "all"
   WideLines		  on
   ShowLineDimensions	  off
-  ShowPortDataTypes	  off
+  ShowPortDataTypes	  on
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -78,6 +78,7 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Batman_Code"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -132,7 +133,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    1
+    Dimension		    2
     Simulink.ConfigSet {
       $ObjectID		      3
       Version		      "1.11.1"
@@ -151,7 +152,7 @@ Model {
 	  StartTime		  "0.0"
 	  StopTime		  "3"
 	  AbsTol		  "auto"
-	  FixedStep		  "0.000250"
+	  FixedStep		  "0.00025"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -462,7 +463,7 @@ Model {
 	  GenerateSLWebview	  off
 	  GenerateCodeMetricsReport off
 	  RTWCompilerOptimization "Off"
-	  CheckMdlBeforeBuild	  "Off"
+	  CheckMdlBeforeBuild	  "Warning"
 	  CustomRebuildMode	  "OnUpdate"
 	  Array {
 	    Type		    "Handle"
@@ -670,14 +671,554 @@ Model {
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 -aProfileNumSamples=100 -aideObjBuildTimeout=1000"
       " -aideObjTimeout=1000 -aoldideObjBuildTimeout=1000 -aoldideObjTimeout=1000 -asystemHeapSize=512 -asystemStackSiz"
       "e=600 -v"
-      CurrentDlgPage	      "Diagnostics/Data Validity"
-      ConfigPrmDlgPosition     [ 182, -1, 1099, 684 ] 
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition     [ 206, 121, 1075, 841 ] 
+    }
+    Simulink.ConfigSet {
+      $ObjectID		      14
+      Version		      "1.11.1"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  15
+	  Version		  "1.11.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "PositivePriorityOrder"
+	    PropName		    "DisabledProps"
+	  }
+	  StartTime		  "0.0"
+	  StopTime		  "3"
+	  AbsTol		  "auto"
+	  FixedStep		  "0.00025"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  on
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  16
+	  Version		  "1.11.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  17
+	  Version		  "1.11.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "MaxStackSize"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  on
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  off
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode on
+	  LifeSpan		  "1"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  AccelParallelForEachSubsystem	on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  18
+	  Version		  "1.11.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "none"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Enable All"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "warning"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "none"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  19
+	  Version		  "1.11.1"
+	  ProdBitPerChar	  16
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  16
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  16
+	  ProdLargestAtomicInteger "Integer"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  16
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "Texas Instruments->C2000"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  20
+	  Version		  "1.11.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  21
+	  Version		  "1.11.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  22
+	  Version		  "1.11.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "GenerateMakefile"
+	    Cell		    "GenCodeOnly"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "idelink_ert.tlc"
+	  TLCOptions		  "-v"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  off
+	  TemplateMakefile	  "idelink_ert.tmf"
+	  PostCodeGenCommand	  "LNPostCodeGenCommand(modelName, buildInfo)"
+	  Description		  "IDE Link ERT"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  "idelink_ert_make_rtw_hook"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  GenerateCodeMetricsReport off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Warning"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      23
+	      Version		      "1.11.1"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses off
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    pjtgeneratorpkg.ERTFactory {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      24
+	      Version		      "1.11.1"
+	      Array {
+		Type			"Cell"
+		Dimension		2
+		Cell			"GenerateSampleERTMain"
+		Cell			"ERTFilePackagingFormat"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant off
+	      CompOptLevelCompliant   off
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   on
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    on
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   off
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant on
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GenerateErtSFunction    off
+	      CreateSILPILBlock	      "None"
+	      CodeExecutionProfileVariable "executionProfile"
+	      CodeProfilingSaveOptions "SummaryOnly"
+	      GenerateASAP2	      off
+	      ExtMode		      off
+	      ExtModeTransport	      0
+	      ExtModeStaticAlloc      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTesting	      off
+	      ExtModeMexFile	      "TIC2000ExternalModeOpen"
+	      ExtModeIntrfLevel	      "Level2 - Open"
+	      InlinedParameterPlacement	"Hierarchical"
+	      TargetOS		      "BareBoardExample"
+	      MultiInstanceErrorCode  "Error"
+	      RateGroupingCode	      on
+	      RootIOFormat	      "Individual arguments"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      ERTSrcFileBannerTemplate "ert_code_template.cgt"
+	      ERTHdrFileBannerTemplate "ert_code_template.cgt"
+	      ERTDataSrcFileTemplate  "ert_code_template.cgt"
+	      ERTDataHdrFileTemplate  "ert_code_template.cgt"
+	      ERTCustomFileTemplate   "example_file_process.tlc"
+	      CoverageDialogOpen      "off"
+	      EnableDataOwnership     off
+	      SignalDisplayLevel      10
+	      ParamTuneLevel	      10
+	      GlobalDataDefinition    "Auto"
+	      DataDefinitionFile      "global.c"
+	      GlobalDataReference     "Auto"
+	      ERTFilePackagingFormat  "Modular"
+	      DataReferenceFile	      "global.h"
+	      GRTInterface	      off
+	      PreserveExpressionOrder off
+	      PreserveIfCondition     off
+	      ConvertIfToSwitch	      off
+	      PreserveExternInFcnDecls on
+	      SuppressUnreachableDefaultCases off
+	      EnableUserReplacementTypes off
+	      Array {
+		Type			"Struct"
+		Dimension		1
+		MATStruct {
+		  double		  ""
+		  single		  ""
+		  int32			  ""
+		  int16			  ""
+		  int8			  ""
+		  uint32		  ""
+		  uint16		  ""
+		  uint8			  ""
+		  boolean		  ""
+		  int			  ""
+		  uint			  ""
+		  char			  ""
+		}
+		PropName		"ReplacementTypes"
+	      }
+	      MemSecPackage	      "--- None ---"
+	      MemSecDataConstants     "Default"
+	      MemSecDataIO	      "Default"
+	      MemSecDataInternal      "Default"
+	      MemSecDataParameters    "Default"
+	      MemSecFuncInitTerm      "Default"
+	      MemSecFuncExecute	      "Default"
+	      MemSecFuncSharedUtil    "Default"
+	      CodeProfilingInstrumentation off
+	      AdaptorName	      "Texas Instruments Code Composer Studio v4 (makefile generation only)"
+	      exportIDEObj	      on
+	      ideObjName	      "IDE_Obj"
+	      oldideObjName	      "IDE_Obj"
+	      ideObjTimeout	      1000
+	      oldideObjTimeout	      1000
+	      ideObjBuildTimeout      1000
+	      oldideObjBuildTimeout   1000
+	      ProfileGenCode	      off
+	      profileBy		      "Tasks"
+	      ProfileNumSamples	      100
+	      InlineDSPBlks	      off
+	      projectOptions	      "Release"
+	      debugCompilerOptions    " -s -O2 -dDSP=1"
+	      releaseCompilerOptions  " -s -O2 -dDSP=1"
+	      compilerOptionsStr      " -s -O2 -dDSP=1"
+	      getCompilerOptions      off
+	      resetCompilerOptions    off
+	      debugLinkerOptions      " -heap0x10000 -ecode_start -q"
+	      releaseLinkerOptions    " -heap0x10000 -ecode_start -q"
+	      linkerOptionsStr	      " -heap0x10000 -ecode_start -q"
+	      getLinkerOptions	      off
+	      resetLinkerOptions      off
+	      systemStackSize	      600
+	      systemHeapSize	      512
+	      buildFormat	      "Makefile"
+	      buildAction	      "Create"
+	      overrunNotificationMethod	"None"
+	      overrunNotificationFcn  "myfunction"
+	      oldoverrunNotificationFcn	"myfunction"
+	      configurePIL	      off
+	      configPILBlockAction    "None"
+	      DiagnosticActions	      "warning"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration1"
+      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 -aProfileNumSamples=100 -aideObjBuildTimeout=1000"
+      " -aideObjTimeout=1000 -aoldideObjBuildTimeout=1000 -aoldideObjTimeout=1000 -asystemHeapSize=512 -asystemStackSiz"
+      "e=600 -v"
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition     [ 206, 121, 1075, 841 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    3
+    $ObjectID		    14
   }
   BlockDefaults {
     ForegroundColor	    "black"
@@ -933,7 +1474,7 @@ Model {
   }
   System {
     Name		    "Batman_Code"
-    Location		    [6, 74, 1418, 744]
+    Location		    [8, 74, 1272, 772]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -947,7 +1488,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "19311"
+    SIDHighWatermark	    "19349"
     Block {
       BlockType		      Constant
       Name		      "1Hz Blink"
@@ -989,7 +1530,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CAN-Receive"
-	Location		[6, 74, 1418, 744]
+	Location		[6, 82, 1249, 752]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4030,7 +4571,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CAN-Transmit"
-	Location		[6, 74, 1418, 744]
+	Location		[7, 95, 1271, 793]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4042,7 +4583,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"108"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  TriggerPort
 	  Name			  "function"
@@ -4057,8 +4598,8 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "(Daten verschicken)"
 	  SID			  "19123"
-	  Ports			  [12, 30]
-	  Position		  [405, 75, 590, 820]
+	  Ports			  [19, 33]
+	  Position		  [415, 13, 600, 867]
 	  ZOrder		  -2
 	  ErrorFcn		  "Stateflow.Translate.translate"
 	  PermitHierarchicalResolution "ExplicitOnly"
@@ -4096,7 +4637,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "53"
+	    SIDHighWatermark	    "63"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "cell_voltages_in"
@@ -4161,7 +4702,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "error_code_in"
+	      Name		      "error_index_in1"
 	      SID		      "19123::7"
 	      Position		      [20, 351, 40, 369]
 	      ZOrder		      -7
@@ -4170,7 +4711,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "error_index_in"
+	      Name		      "error_index_in2"
 	      SID		      "19123::8"
 	      Position		      [20, 386, 40, 404]
 	      ZOrder		      -8
@@ -4179,7 +4720,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "error_in"
+	      Name		      "error_index_in3"
 	      SID		      "19123::9"
 	      Position		      [20, 426, 40, 444]
 	      ZOrder		      -9
@@ -4188,20 +4729,76 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
+	      Name		      "error_index_in4"
+	      SID		      "19123::54"
+	      Position		      [20, 461, 40, 479]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "error_index_in5"
+	      SID		      "19123::59"
+	      Position		      [20, 496, 40, 514]
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "error_index_in6"
+	      SID		      "19123::60"
+	      Position		      [20, 531, 40, 549]
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "error_index_in7"
+	      SID		      "19123::61"
+	      Position		      [20, 566, 40, 584]
+	      Port		      "14"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "error_index_in8"
+	      SID		      "19123::62"
+	      Position		      [20, 606, 40, 624]
+	      Port		      "15"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "error_in"
+	      SID		      "19123::55"
+	      Position		      [20, 641, 40, 659]
+	      Port		      "16"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
 	      Name		      "lol1"
 	      SID		      "19123::48"
-	      Position		      [20, 461, 40, 479]
+	      Position		      [20, 676, 40, 694]
 	      ZOrder		      6
-	      Port		      "11"
+	      Port		      "17"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "lol2"
 	      SID		      "19123::49"
-	      Position		      [20, 496, 40, 514]
+	      Position		      [20, 711, 40, 729]
 	      ZOrder		      7
-	      Port		      "12"
+	      Port		      "18"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CellNo"
+	      SID		      "19123::63"
+	      Position		      [20, 746, 40, 764]
+	      Port		      "19"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -4209,7 +4806,7 @@ Model {
 	      Name		      " Demux "
 	      SID		      "19123::51"
 	      Ports		      [1, 1]
-	      Position		      [270, 1180, 320, 1220]
+	      Position		      [270, 1290, 320, 1330]
 	      Outputs		      "1"
 	    }
 	    Block {
@@ -4217,188 +4814,205 @@ Model {
 	      Name		      " SFunction "
 	      SID		      "19123::50"
 	      Tag		      "Stateflow S-Function Batman_Code 3"
-	      Ports		      [12, 31]
-	      Position		      [180, 104, 230, 746]
+	      Ports		      [19, 34]
+	      Position		      [180, 105, 230, 805]
 	      FunctionName	      "sf_sfun"
-	      Parameters	      "CellNo"
-	      PortCounts	      "[12 31]"
+	      PortCounts	      "[19 34]"
 	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
-		Name			"trig_0"
+		Name			"trig_9"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		3
-		Name			"can_low_0"
+		Name			"can_low_9"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		4
-		Name			"can_high_0"
+		Name			"can_high_9"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		5
-		Name			"trig_1"
+		Name			"trig_0"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		6
-		Name			"can_low_1"
+		Name			"can_low_0"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		7
-		Name			"can_high_1"
+		Name			"can_high_0"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		8
-		Name			"trig_2"
+		Name			"trig_1"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		9
-		Name			"can_low_2"
+		Name			"can_low_1"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		10
-		Name			"can_high_2"
+		Name			"can_high_1"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		11
-		Name			"trig_3"
+		Name			"trig_2"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		12
-		Name			"can_low_3"
+		Name			"can_low_2"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		13
-		Name			"can_high_3"
+		Name			"can_high_2"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		14
-		Name			"trig_4"
+		Name			"trig_3"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		15
-		Name			"can_low_4"
+		Name			"can_low_3"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		16
-		Name			"can_high_4"
+		Name			"can_high_3"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		17
-		Name			"trig_5"
+		Name			"trig_4"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		18
-		Name			"can_low_5"
+		Name			"can_low_4"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		19
-		Name			"can_high_5"
+		Name			"can_high_4"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		20
-		Name			"trig_6"
+		Name			"trig_5"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		21
-		Name			"can_low_6"
+		Name			"can_low_5"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		22
-		Name			"can_high_6"
+		Name			"can_high_5"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		23
-		Name			"trig_7"
+		Name			"trig_6"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		24
-		Name			"can_low_7"
+		Name			"can_low_6"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		25
-		Name			"can_high_7"
+		Name			"can_high_6"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		26
-		Name			"trig_8"
+		Name			"trig_7"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		27
-		Name			"can_low_8"
+		Name			"can_low_7"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		28
-		Name			"can_high_8"
+		Name			"can_high_7"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		29
-		Name			"error_code_out"
+		Name			"trig_8"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		30
-		Name			"error_index_out"
+		Name			"can_low_8"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
 	      Port {
 		PortNumber		31
+		Name			"can_high_8"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		32
+		Name			"error_code_out"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		33
+		Name			"error_index_out"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		34
 		Name			"error_out"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
@@ -4408,11 +5022,11 @@ Model {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
 	      SID		      "19123::53"
-	      Position		      [460, 1191, 480, 1209]
+	      Position		      [460, 1301, 480, 1319]
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "trig_0"
+	      Name		      "trig_9"
 	      SID		      "19123::13"
 	      Position		      [460, 101, 480, 119]
 	      ZOrder		      -13
@@ -4420,7 +5034,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "can_low_0"
+	      Name		      "can_low_9"
 	      SID		      "19123::14"
 	      Position		      [460, 136, 480, 154]
 	      ZOrder		      -14
@@ -4429,254 +5043,278 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
+	      Name		      "can_high_9"
+	      SID		      "19123::56"
+	      Position		      [460, 171, 480, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "trig_0"
+	      SID		      "19123::57"
+	      Position		      [460, 206, 480, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "can_low_0"
+	      SID		      "19123::58"
+	      Position		      [460, 246, 480, 264]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
 	      Name		      "can_high_0"
 	      SID		      "19123::15"
-	      Position		      [460, 171, 480, 189]
+	      Position		      [460, 281, 480, 299]
 	      ZOrder		      -15
-	      Port		      "3"
+	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_1"
 	      SID		      "19123::16"
-	      Position		      [460, 206, 480, 224]
+	      Position		      [460, 316, 480, 334]
 	      ZOrder		      -16
-	      Port		      "4"
+	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_1"
 	      SID		      "19123::17"
-	      Position		      [460, 246, 480, 264]
+	      Position		      [460, 351, 480, 369]
 	      ZOrder		      -17
-	      Port		      "5"
+	      Port		      "8"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_1"
 	      SID		      "19123::18"
-	      Position		      [460, 281, 480, 299]
+	      Position		      [460, 386, 480, 404]
 	      ZOrder		      -18
-	      Port		      "6"
+	      Port		      "9"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_2"
 	      SID		      "19123::19"
-	      Position		      [460, 316, 480, 334]
+	      Position		      [460, 426, 480, 444]
 	      ZOrder		      -19
-	      Port		      "7"
+	      Port		      "10"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_2"
 	      SID		      "19123::20"
-	      Position		      [460, 351, 480, 369]
+	      Position		      [460, 461, 480, 479]
 	      ZOrder		      -20
-	      Port		      "8"
+	      Port		      "11"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_2"
 	      SID		      "19123::21"
-	      Position		      [460, 386, 480, 404]
+	      Position		      [460, 496, 480, 514]
 	      ZOrder		      -21
-	      Port		      "9"
+	      Port		      "12"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_3"
 	      SID		      "19123::22"
-	      Position		      [460, 426, 480, 444]
+	      Position		      [460, 531, 480, 549]
 	      ZOrder		      -22
-	      Port		      "10"
+	      Port		      "13"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_3"
 	      SID		      "19123::23"
-	      Position		      [460, 461, 480, 479]
+	      Position		      [460, 566, 480, 584]
 	      ZOrder		      -23
-	      Port		      "11"
+	      Port		      "14"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_3"
 	      SID		      "19123::24"
-	      Position		      [460, 496, 480, 514]
+	      Position		      [460, 606, 480, 624]
 	      ZOrder		      -24
-	      Port		      "12"
+	      Port		      "15"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_4"
 	      SID		      "19123::25"
-	      Position		      [460, 531, 480, 549]
+	      Position		      [460, 641, 480, 659]
 	      ZOrder		      -25
-	      Port		      "13"
+	      Port		      "16"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_4"
 	      SID		      "19123::26"
-	      Position		      [460, 566, 480, 584]
+	      Position		      [460, 676, 480, 694]
 	      ZOrder		      -26
-	      Port		      "14"
+	      Port		      "17"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_4"
 	      SID		      "19123::27"
-	      Position		      [460, 606, 480, 624]
+	      Position		      [460, 711, 480, 729]
 	      ZOrder		      -27
-	      Port		      "15"
+	      Port		      "18"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_5"
 	      SID		      "19123::28"
-	      Position		      [460, 641, 480, 659]
+	      Position		      [460, 746, 480, 764]
 	      ZOrder		      -28
-	      Port		      "16"
+	      Port		      "19"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_5"
 	      SID		      "19123::29"
-	      Position		      [460, 676, 480, 694]
+	      Position		      [460, 786, 480, 804]
 	      ZOrder		      -29
-	      Port		      "17"
+	      Port		      "20"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_5"
 	      SID		      "19123::30"
-	      Position		      [460, 711, 480, 729]
+	      Position		      [460, 821, 480, 839]
 	      ZOrder		      -30
-	      Port		      "18"
+	      Port		      "21"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_6"
 	      SID		      "19123::31"
-	      Position		      [460, 746, 480, 764]
+	      Position		      [460, 856, 480, 874]
 	      ZOrder		      -31
-	      Port		      "19"
+	      Port		      "22"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_6"
 	      SID		      "19123::32"
-	      Position		      [460, 786, 480, 804]
+	      Position		      [460, 891, 480, 909]
 	      ZOrder		      -32
-	      Port		      "20"
+	      Port		      "23"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_6"
 	      SID		      "19123::33"
-	      Position		      [460, 821, 480, 839]
+	      Position		      [460, 926, 480, 944]
 	      ZOrder		      -33
-	      Port		      "21"
+	      Port		      "24"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_7"
 	      SID		      "19123::34"
-	      Position		      [460, 856, 480, 874]
+	      Position		      [460, 966, 480, 984]
 	      ZOrder		      -34
-	      Port		      "22"
+	      Port		      "25"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_7"
 	      SID		      "19123::35"
-	      Position		      [460, 891, 480, 909]
+	      Position		      [460, 1001, 480, 1019]
 	      ZOrder		      -35
-	      Port		      "23"
+	      Port		      "26"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_7"
 	      SID		      "19123::36"
-	      Position		      [460, 926, 480, 944]
+	      Position		      [460, 1036, 480, 1054]
 	      ZOrder		      -36
-	      Port		      "24"
+	      Port		      "27"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "trig_8"
 	      SID		      "19123::37"
-	      Position		      [460, 966, 480, 984]
+	      Position		      [460, 1071, 480, 1089]
 	      ZOrder		      -37
-	      Port		      "25"
+	      Port		      "28"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_low_8"
 	      SID		      "19123::38"
-	      Position		      [460, 1001, 480, 1019]
+	      Position		      [460, 1106, 480, 1124]
 	      ZOrder		      -38
-	      Port		      "26"
+	      Port		      "29"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "can_high_8"
 	      SID		      "19123::39"
-	      Position		      [460, 1036, 480, 1054]
+	      Position		      [460, 1146, 480, 1164]
 	      ZOrder		      -39
-	      Port		      "27"
+	      Port		      "30"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "error_code_out"
 	      SID		      "19123::40"
-	      Position		      [460, 1071, 480, 1089]
+	      Position		      [460, 1181, 480, 1199]
 	      ZOrder		      -40
-	      Port		      "28"
+	      Port		      "31"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "error_index_out"
 	      SID		      "19123::41"
-	      Position		      [460, 1106, 480, 1124]
+	      Position		      [460, 1216, 480, 1234]
 	      ZOrder		      -41
-	      Port		      "29"
+	      Port		      "32"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "error_out"
 	      SID		      "19123::42"
-	      Position		      [460, 1146, 480, 1164]
+	      Position		      [460, 1251, 480, 1269]
 	      ZOrder		      -42
-	      Port		      "30"
+	      Port		      "33"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -4722,40 +5360,106 @@ Model {
 	      DstPort		      7
 	    }
 	    Line {
-	      SrcBlock		      "error_code_in"
+	      SrcBlock		      "error_index_in1"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      8
 	    }
 	    Line {
-	      SrcBlock		      "error_index_in"
+	      SrcBlock		      "error_index_in2"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      9
 	    }
 	    Line {
-	      SrcBlock		      "error_in"
+	      SrcBlock		      "error_index_in3"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      10
 	    }
 	    Line {
-	      SrcBlock		      "lol1"
+	      SrcBlock		      "error_index_in4"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      11
 	    }
 	    Line {
-	      SrcBlock		      "lol2"
+	      SrcBlock		      "error_index_in5"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      12
 	    }
 	    Line {
-	      Name		      "trig_0"
+	      SrcBlock		      "error_index_in6"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      13
+	    }
+	    Line {
+	      SrcBlock		      "error_index_in7"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      14
+	    }
+	    Line {
+	      SrcBlock		      "error_index_in8"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      15
+	    }
+	    Line {
+	      SrcBlock		      "error_in"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      16
+	    }
+	    Line {
+	      SrcBlock		      "lol1"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      17
+	    }
+	    Line {
+	      SrcBlock		      "lol2"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      18
+	    }
+	    Line {
+	      SrcBlock		      "CellNo"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      19
+	    }
+	    Line {
+	      Name		      "trig_9"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
+	      DstBlock		      "trig_9"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "can_low_9"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "can_low_9"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "can_high_9"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "can_high_9"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "trig_0"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      5
 	      DstBlock		      "trig_0"
 	      DstPort		      1
 	    }
@@ -4763,7 +5467,7 @@ Model {
 	      Name		      "can_low_0"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      3
+	      SrcPort		      6
 	      DstBlock		      "can_low_0"
 	      DstPort		      1
 	    }
@@ -4771,7 +5475,7 @@ Model {
 	      Name		      "can_high_0"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      4
+	      SrcPort		      7
 	      DstBlock		      "can_high_0"
 	      DstPort		      1
 	    }
@@ -4779,7 +5483,7 @@ Model {
 	      Name		      "trig_1"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      5
+	      SrcPort		      8
 	      DstBlock		      "trig_1"
 	      DstPort		      1
 	    }
@@ -4787,7 +5491,7 @@ Model {
 	      Name		      "can_low_1"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      6
+	      SrcPort		      9
 	      DstBlock		      "can_low_1"
 	      DstPort		      1
 	    }
@@ -4795,7 +5499,7 @@ Model {
 	      Name		      "can_high_1"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      7
+	      SrcPort		      10
 	      DstBlock		      "can_high_1"
 	      DstPort		      1
 	    }
@@ -4803,7 +5507,7 @@ Model {
 	      Name		      "trig_2"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      8
+	      SrcPort		      11
 	      DstBlock		      "trig_2"
 	      DstPort		      1
 	    }
@@ -4811,7 +5515,7 @@ Model {
 	      Name		      "can_low_2"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      9
+	      SrcPort		      12
 	      DstBlock		      "can_low_2"
 	      DstPort		      1
 	    }
@@ -4819,7 +5523,7 @@ Model {
 	      Name		      "can_high_2"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      10
+	      SrcPort		      13
 	      DstBlock		      "can_high_2"
 	      DstPort		      1
 	    }
@@ -4827,7 +5531,7 @@ Model {
 	      Name		      "trig_3"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      11
+	      SrcPort		      14
 	      DstBlock		      "trig_3"
 	      DstPort		      1
 	    }
@@ -4835,7 +5539,7 @@ Model {
 	      Name		      "can_low_3"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      12
+	      SrcPort		      15
 	      DstBlock		      "can_low_3"
 	      DstPort		      1
 	    }
@@ -4843,7 +5547,7 @@ Model {
 	      Name		      "can_high_3"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      13
+	      SrcPort		      16
 	      DstBlock		      "can_high_3"
 	      DstPort		      1
 	    }
@@ -4851,7 +5555,7 @@ Model {
 	      Name		      "trig_4"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      14
+	      SrcPort		      17
 	      DstBlock		      "trig_4"
 	      DstPort		      1
 	    }
@@ -4859,7 +5563,7 @@ Model {
 	      Name		      "can_low_4"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      15
+	      SrcPort		      18
 	      DstBlock		      "can_low_4"
 	      DstPort		      1
 	    }
@@ -4867,7 +5571,7 @@ Model {
 	      Name		      "can_high_4"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      16
+	      SrcPort		      19
 	      DstBlock		      "can_high_4"
 	      DstPort		      1
 	    }
@@ -4875,7 +5579,7 @@ Model {
 	      Name		      "trig_5"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      17
+	      SrcPort		      20
 	      DstBlock		      "trig_5"
 	      DstPort		      1
 	    }
@@ -4883,7 +5587,7 @@ Model {
 	      Name		      "can_low_5"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      18
+	      SrcPort		      21
 	      DstBlock		      "can_low_5"
 	      DstPort		      1
 	    }
@@ -4891,7 +5595,7 @@ Model {
 	      Name		      "can_high_5"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      19
+	      SrcPort		      22
 	      DstBlock		      "can_high_5"
 	      DstPort		      1
 	    }
@@ -4899,7 +5603,7 @@ Model {
 	      Name		      "trig_6"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      20
+	      SrcPort		      23
 	      DstBlock		      "trig_6"
 	      DstPort		      1
 	    }
@@ -4907,7 +5611,7 @@ Model {
 	      Name		      "can_low_6"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      21
+	      SrcPort		      24
 	      DstBlock		      "can_low_6"
 	      DstPort		      1
 	    }
@@ -4915,7 +5619,7 @@ Model {
 	      Name		      "can_high_6"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      22
+	      SrcPort		      25
 	      DstBlock		      "can_high_6"
 	      DstPort		      1
 	    }
@@ -4923,7 +5627,7 @@ Model {
 	      Name		      "trig_7"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      23
+	      SrcPort		      26
 	      DstBlock		      "trig_7"
 	      DstPort		      1
 	    }
@@ -4931,7 +5635,7 @@ Model {
 	      Name		      "can_low_7"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      24
+	      SrcPort		      27
 	      DstBlock		      "can_low_7"
 	      DstPort		      1
 	    }
@@ -4939,7 +5643,7 @@ Model {
 	      Name		      "can_high_7"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      25
+	      SrcPort		      28
 	      DstBlock		      "can_high_7"
 	      DstPort		      1
 	    }
@@ -4947,7 +5651,7 @@ Model {
 	      Name		      "trig_8"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      26
+	      SrcPort		      29
 	      DstBlock		      "trig_8"
 	      DstPort		      1
 	    }
@@ -4955,7 +5659,7 @@ Model {
 	      Name		      "can_low_8"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      27
+	      SrcPort		      30
 	      DstBlock		      "can_low_8"
 	      DstPort		      1
 	    }
@@ -4963,7 +5667,7 @@ Model {
 	      Name		      "can_high_8"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      28
+	      SrcPort		      31
 	      DstBlock		      "can_high_8"
 	      DstPort		      1
 	    }
@@ -4971,7 +5675,7 @@ Model {
 	      Name		      "error_code_out"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      29
+	      SrcPort		      32
 	      DstBlock		      "error_code_out"
 	      DstPort		      1
 	    }
@@ -4979,7 +5683,7 @@ Model {
 	      Name		      "error_index_out"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      30
+	      SrcPort		      33
 	      DstBlock		      "error_index_out"
 	      DstPort		      1
 	    }
@@ -4987,7 +5691,7 @@ Model {
 	      Name		      "error_out"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
-	      SrcPort		      31
+	      SrcPort		      34
 	      DstBlock		      "error_out"
 	      DstPort		      1
 	    }
@@ -5010,7 +5714,7 @@ Model {
 	  Name			  "CAN balance"
 	  SID			  "19124"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 712, 760, 738]
+	  Position		  [670, 742, 760, 768]
 	  ZOrder		  -3
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5084,7 +5788,7 @@ Model {
 	  Name			  "CAN current"
 	  SID			  "19128"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 637, 760, 663]
+	  Position		  [670, 667, 760, 693]
 	  ZOrder		  -4
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5155,10 +5859,10 @@ Model {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "CAN error"
+	  Name			  "CAN error1"
 	  SID			  "19132"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 112, 760, 138]
+	  Position		  [670, 142, 760, 168]
 	  ZOrder		  -5
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5169,7 +5873,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  System {
-	    Name		    "CAN error"
+	    Name		    "CAN error1"
 	    Location		    [-8, 82, 1252, 891]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -5229,10 +5933,84 @@ Model {
 	}
 	Block {
 	  BlockType		  SubSystem
+	  Name			  "CAN error2"
+	  SID			  "19339"
+	  Ports			  [1, 0, 1]
+	  Position		  [710, 67, 800, 93]
+	  ZOrder		  -5
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "CAN error2"
+	    Location		    [-8, 82, 1252, 891]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Msg"
+	      SID		      "19340"
+	      Position		      [25, 78, 55, 92]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      SID		      "19341"
+	      Ports		      []
+	      Position		      [30, 15, 50, 35]
+	      ZOrder		      -2
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "eCAN Transmit"
+	      SID		      "19342"
+	      Ports		      [1]
+	      Position		      [155, 70, 265, 100]
+	      ZOrder		      -3
+	      ShowName		      off
+	      LibraryVersion	      "1.42"
+	      SourceBlock	      "c280xlib/eCAN Transmit"
+	      SourceType	      "C280x/C2833x eCAN Transmit"
+	      chipFamily	      "C28x3x"
+	      useModule		      "eCAN_A"
+	      mailboxNo		      "20"
+	      messageID		      "id_send_error2"
+	      messageType	      "Standard (11-bit identifier)"
+	      enableBlockingMode      off
+	      postInterrupt	      off
+	      interruptLine	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Msg"
+	      SrcPort		      1
+	      DstBlock		      "eCAN Transmit"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
 	  Name			  "CAN temp_1"
 	  SID			  "19136"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 412, 760, 438]
+	  Position		  [670, 442, 760, 468]
 	  ZOrder		  -6
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5306,7 +6084,7 @@ Model {
 	  Name			  "CAN temp_2"
 	  SID			  "19140"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 487, 760, 513]
+	  Position		  [670, 517, 760, 543]
 	  ZOrder		  -7
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5380,7 +6158,7 @@ Model {
 	  Name			  "CAN temp_3"
 	  SID			  "19144"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 562, 760, 588]
+	  Position		  [670, 592, 760, 618]
 	  ZOrder		  -8
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5392,8 +6170,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "CAN temp_3"
-	    Location		    [260, 149, 704, 503]
-	    Open		    off
+	    Location		    [258, 123, 706, 530]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5454,7 +6232,7 @@ Model {
 	  Name			  "CAN volt_1"
 	  SID			  "19148"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 187, 760, 213]
+	  Position		  [670, 217, 760, 243]
 	  ZOrder		  -9
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5528,7 +6306,7 @@ Model {
 	  Name			  "CAN volt_2"
 	  SID			  "19152"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 262, 760, 288]
+	  Position		  [670, 292, 760, 318]
 	  ZOrder		  -10
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5602,7 +6380,7 @@ Model {
 	  Name			  "CAN volt_3"
 	  SID			  "19156"
 	  Ports			  [1, 0, 1]
-	  Position		  [670, 337, 760, 363]
+	  Position		  [670, 367, 760, 393]
 	  ZOrder		  -11
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -5676,7 +6454,7 @@ Model {
 	  Name			  "Data Store\nRead1"
 	  SID			  "19160"
 	  Ports			  [0, 1]
-	  Position		  [265, 346, 365, 374]
+	  Position		  [265, 226, 365, 254]
 	  ZOrder		  -12
 	  ShowName		  off
 	  DataStoreName		  "bat_curr"
@@ -5686,37 +6464,107 @@ Model {
 	  Name			  "Data Store\nRead10"
 	  SID			  "19161"
 	  Ports			  [0, 1]
-	  Position		  [265, 706, 365, 734]
+	  Position		  [265, 766, 365, 794]
 	  ZOrder		  3
 	  ShowName		  off
 	  DataStoreName		  "volt_RTPC"
 	}
 	Block {
 	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead11"
+	  SID			  "19332"
+	  Ports			  [0, 1]
+	  Position		  [265, 496, 365, 524]
+	  ZOrder		  -14
+	  ShowName		  off
+	  DataStoreName		  "error_index4"
+	}
+	Block {
+	  BlockType		  DataStoreRead
 	  Name			  "Data Store\nRead12"
 	  SID			  "19162"
 	  Ports			  [0, 1]
-	  Position		  [265, 526, 365, 554]
+	  Position		  [265, 361, 365, 389]
 	  ZOrder		  -13
 	  ShowName		  off
-	  DataStoreName		  "error_code"
+	  DataStoreName		  "error_index1"
 	}
 	Block {
 	  BlockType		  DataStoreRead
 	  Name			  "Data Store\nRead13"
 	  SID			  "19163"
 	  Ports			  [0, 1]
-	  Position		  [265, 646, 365, 674]
+	  Position		  [265, 451, 365, 479]
 	  ZOrder		  -14
 	  ShowName		  off
+	  DataStoreName		  "error_index3"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead14"
+	  SID			  "19333"
+	  Ports			  [0, 1]
+	  Position		  [265, 721, 365, 749]
+	  ZOrder		  1
+	  ShowName		  off
 	  DataStoreName		  "error"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead15"
+	  SID			  "19344"
+	  Ports			  [0, 1]
+	  Position		  [265, 541, 365, 569]
+	  ZOrder		  -14
+	  ShowName		  off
+	  DataStoreName		  "error_index5"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead16"
+	  SID			  "19345"
+	  Ports			  [0, 1]
+	  Position		  [265, 631, 365, 659]
+	  ZOrder		  -14
+	  ShowName		  off
+	  DataStoreName		  "error_index7"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead17"
+	  SID			  "19346"
+	  Ports			  [0, 1]
+	  Position		  [265, 586, 365, 614]
+	  ZOrder		  -14
+	  ShowName		  off
+	  DataStoreName		  "error_index6"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead18"
+	  SID			  "19348"
+	  Ports			  [0, 1]
+	  Position		  [265, 676, 365, 704]
+	  ZOrder		  -14
+	  ShowName		  off
+	  DataStoreName		  "error_index8"
+	}
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead19"
+	  SID			  "19349"
+	  Ports			  [0, 1]
+	  Position		  [250, 836, 350, 864]
+	  ZOrder		  2
+	  ShowName		  off
+	  DataStoreName		  "CellNo"
 	}
 	Block {
 	  BlockType		  DataStoreRead
 	  Name			  "Data Store\nRead2"
 	  SID			  "19164"
 	  Ports			  [0, 1]
-	  Position		  [265, 106, 365, 134]
+	  Position		  [260, 46, 360, 74]
 	  ZOrder		  -15
 	  ShowName		  off
 	  DataStoreName		  "cell_volt"
@@ -5726,7 +6574,7 @@ Model {
 	  Name			  "Data Store\nRead3"
 	  SID			  "19165"
 	  Ports			  [0, 1]
-	  Position		  [265, 166, 365, 194]
+	  Position		  [265, 91, 365, 119]
 	  ZOrder		  -16
 	  ShowName		  off
 	  DataStoreName		  "cell_temp"
@@ -5736,7 +6584,7 @@ Model {
 	  Name			  "Data Store\nRead4"
 	  SID			  "19166"
 	  Ports			  [0, 1]
-	  Position		  [265, 286, 365, 314]
+	  Position		  [265, 181, 365, 209]
 	  ZOrder		  -17
 	  ShowName		  off
 	  DataStoreName		  "bat_volt"
@@ -5746,7 +6594,7 @@ Model {
 	  Name			  "Data Store\nRead5"
 	  SID			  "19167"
 	  Ports			  [0, 1]
-	  Position		  [265, 226, 365, 254]
+	  Position		  [265, 136, 365, 164]
 	  ZOrder		  -18
 	  ShowName		  off
 	  DataStoreName		  "SoC"
@@ -5756,7 +6604,7 @@ Model {
 	  Name			  "Data Store\nRead6"
 	  SID			  "19168"
 	  Ports			  [0, 1]
-	  Position		  [265, 466, 365, 494]
+	  Position		  [265, 316, 365, 344]
 	  ZOrder		  1
 	  ShowName		  off
 	  DataStoreName		  "bat_mode"
@@ -5766,17 +6614,17 @@ Model {
 	  Name			  "Data Store\nRead7"
 	  SID			  "19169"
 	  Ports			  [0, 1]
-	  Position		  [265, 586, 365, 614]
+	  Position		  [265, 406, 365, 434]
 	  ZOrder		  -19
 	  ShowName		  off
-	  DataStoreName		  "error_index"
+	  DataStoreName		  "error_index2"
 	}
 	Block {
 	  BlockType		  DataStoreRead
 	  Name			  "Data Store\nRead8"
 	  SID			  "19170"
 	  Ports			  [0, 1]
-	  Position		  [265, 766, 365, 794]
+	  Position		  [250, 801, 350, 829]
 	  ZOrder		  2
 	  ShowName		  off
 	  DataStoreName		  "curr_RTPC"
@@ -5786,37 +6634,17 @@ Model {
 	  Name			  "Data Store\nRead9"
 	  SID			  "19171"
 	  Ports			  [0, 1]
-	  Position		  [265, 406, 365, 434]
+	  Position		  [265, 271, 365, 299]
 	  ZOrder		  -20
 	  ShowName		  off
 	  DataStoreName		  "balance_vec"
 	}
 	Block {
 	  BlockType		  DataStoreWrite
-	  Name			  "Data Store\nWrite1"
-	  SID			  "19172"
-	  Ports			  [1]
-	  Position		  [795, 747, 895, 773]
-	  ZOrder		  -21
-	  ShowName		  off
-	  DataStoreName		  "error_code"
-	}
-	Block {
-	  BlockType		  DataStoreWrite
-	  Name			  "Data Store\nWrite2"
-	  SID			  "19173"
-	  Ports			  [1]
-	  Position		  [665, 772, 765, 798]
-	  ZOrder		  -22
-	  ShowName		  off
-	  DataStoreName		  "error_index"
-	}
-	Block {
-	  BlockType		  DataStoreWrite
 	  Name			  "Data Store\nWrite4"
 	  SID			  "19174"
 	  Ports			  [1]
-	  Position		  [795, 797, 895, 823]
+	  Position		  [785, 827, 885, 853]
 	  ZOrder		  -23
 	  ShowName		  off
 	  DataStoreName		  "error"
@@ -5885,8 +6713,19 @@ Model {
 	  Name			  "Mux1"
 	  SID			  "19175"
 	  Ports			  [2, 1]
-	  Position		  [630, 249, 635, 296]
+	  Position		  [630, 279, 635, 326]
 	  ZOrder		  -24
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux10"
+	  SID			  "19343"
+	  Ports			  [2, 1]
+	  Position		  [670, 52, 675, 103]
+	  ZOrder		  -31
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
@@ -5896,7 +6735,7 @@ Model {
 	  Name			  "Mux2"
 	  SID			  "19176"
 	  Ports			  [2, 1]
-	  Position		  [630, 399, 635, 446]
+	  Position		  [630, 429, 635, 476]
 	  ZOrder		  -25
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5907,7 +6746,7 @@ Model {
 	  Name			  "Mux3"
 	  SID			  "19177"
 	  Ports			  [2, 1]
-	  Position		  [630, 174, 635, 221]
+	  Position		  [630, 204, 635, 251]
 	  ZOrder		  -26
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5918,7 +6757,7 @@ Model {
 	  Name			  "Mux4"
 	  SID			  "19178"
 	  Ports			  [2, 1]
-	  Position		  [630, 324, 635, 371]
+	  Position		  [630, 354, 635, 401]
 	  ZOrder		  -27
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5929,7 +6768,7 @@ Model {
 	  Name			  "Mux5"
 	  SID			  "19179"
 	  Ports			  [2, 1]
-	  Position		  [630, 547, 635, 598]
+	  Position		  [630, 577, 635, 628]
 	  ZOrder		  -28
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5940,7 +6779,7 @@ Model {
 	  Name			  "Mux6"
 	  SID			  "19180"
 	  Ports			  [2, 1]
-	  Position		  [630, 699, 635, 746]
+	  Position		  [630, 729, 635, 776]
 	  ZOrder		  -29
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5951,7 +6790,7 @@ Model {
 	  Name			  "Mux7"
 	  SID			  "19181"
 	  Ports			  [2, 1]
-	  Position		  [630, 470, 635, 525]
+	  Position		  [630, 500, 635, 555]
 	  ZOrder		  -30
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5962,7 +6801,7 @@ Model {
 	  Name			  "Mux8"
 	  SID			  "19182"
 	  Ports			  [2, 1]
-	  Position		  [630, 97, 635, 148]
+	  Position		  [630, 127, 635, 178]
 	  ZOrder		  -31
 	  ShowName		  off
 	  Inputs		  "2"
@@ -5973,7 +6812,7 @@ Model {
 	  Name			  "Mux9"
 	  SID			  "19183"
 	  Ports			  [2, 1]
-	  Position		  [630, 621, 635, 674]
+	  Position		  [630, 651, 635, 704]
 	  ZOrder		  -32
 	  ShowName		  off
 	  Inputs		  "2"
@@ -6051,13 +6890,13 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  5
+	  SrcPort		  8
 	  DstBlock		  "Mux3"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  6
+	  SrcPort		  9
 	  DstBlock		  "Mux3"
 	  DstPort		  2
 	}
@@ -6069,13 +6908,13 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  8
+	  SrcPort		  11
 	  DstBlock		  "Mux1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  9
+	  SrcPort		  12
 	  DstBlock		  "Mux1"
 	  DstPort		  2
 	}
@@ -6088,12 +6927,14 @@ Model {
 	Line {
 	  SrcBlock		  "Data Store\nRead1"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead2"
 	  SrcPort		  1
+	  Points		  [35, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  1
 	}
@@ -6111,37 +6952,37 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  14
-	  DstBlock		  "Mux2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  15
-	  DstBlock		  "Mux2"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  11
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  12
-	  DstBlock		  "Mux4"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
 	  SrcPort		  17
-	  DstBlock		  "Mux7"
+	  DstBlock		  "Mux2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
 	  SrcPort		  18
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  14
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  15
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  20
+	  DstBlock		  "Mux7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  21
 	  DstBlock		  "Mux7"
 	  DstPort		  2
 	}
@@ -6153,13 +6994,13 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  20
+	  SrcPort		  23
 	  DstBlock		  "Mux5"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  21
+	  SrcPort		  24
 	  DstBlock		  "Mux5"
 	  DstPort		  2
 	}
@@ -6178,112 +7019,101 @@ Model {
 	Line {
 	  SrcBlock		  "Data Store\nRead3"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  23
-	  DstBlock		  "Mux9"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  24
-	  DstBlock		  "Mux9"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
 	  SrcPort		  26
-	  DstBlock		  "Mux6"
+	  DstBlock		  "Mux9"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
 	  SrcPort		  27
+	  DstBlock		  "Mux9"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  29
+	  DstBlock		  "Mux6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  30
 	  DstBlock		  "Mux6"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead9"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  6
 	}
 	Line {
 	  SrcBlock		  "Mux8"
 	  SrcPort		  1
-	  DstBlock		  "CAN error"
+	  DstBlock		  "CAN error1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  4
-	  Points		  [120, 0]
+	  SrcPort		  7
+	  Points		  [110, 0]
 	  DstBlock		  "CAN volt_1"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  7
-	  Points		  [120, 0]
+	  SrcPort		  10
+	  Points		  [110, 0]
 	  DstBlock		  "CAN volt_2"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  10
-	  Points		  [120, 0]
+	  SrcPort		  13
+	  Points		  [110, 0]
 	  DstBlock		  "CAN volt_3"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  13
-	  Points		  [120, 0]
+	  SrcPort		  16
+	  Points		  [110, 0]
 	  DstBlock		  "CAN temp_1"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  16
-	  Points		  [120, 0]
+	  SrcPort		  19
+	  Points		  [0, -5; 110, 0]
 	  DstBlock		  "CAN temp_2"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  19
-	  Points		  [120, 0]
+	  SrcPort		  22
+	  Points		  [110, 0]
 	  DstBlock		  "CAN temp_3"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  22
-	  Points		  [120, 0]
+	  SrcPort		  25
+	  Points		  [110, 0]
 	  DstBlock		  "CAN current"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  3
+	  SrcPort		  6
 	  DstBlock		  "Mux8"
 	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  2
-	  DstBlock		  "Mux8"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  1
-	  Points		  [120, 0]
-	  DstBlock		  "CAN error"
-	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "Mux6"
@@ -6293,76 +7123,159 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  25
-	  Points		  [120, 0]
+	  SrcPort		  28
+	  Points		  [110, 0]
 	  DstBlock		  "CAN balance"
 	  DstPort		  enable
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead13"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  10
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead12"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  8
 	}
 	Line {
 	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  28
-	  DstBlock		  "Data Store\nWrite1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  30
+	  SrcPort		  33
 	  DstBlock		  "Data Store\nWrite4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "(Daten verschicken)"
-	  SrcPort		  29
-	  DstBlock		  "Data Store\nWrite2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead7"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  9
 	}
 	Line {
-	  SrcBlock		  "Data Store\nRead6"
-	  SrcPort		  1
-	  DstBlock		  "(Daten verschicken)"
-	  DstPort		  7
-	}
-	Line {
 	  SrcBlock		  "Data Store\nRead5"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead4"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead8"
 	  SrcPort		  1
+	  Points		  [45, 0]
 	  DstBlock		  "(Daten verschicken)"
-	  DstPort		  12
+	  DstPort		  18
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead10"
 	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  17
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead11"
+	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "(Daten verschicken)"
 	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead14"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  16
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  5
+	  DstBlock		  "Mux8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  4
+	  Points		  [110, 0]
+	  DstBlock		  "CAN error1"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Mux10"
+	  SrcPort		  1
+	  DstBlock		  "CAN error2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  3
+	  DstBlock		  "Mux10"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  2
+	  DstBlock		  "Mux10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(Daten verschicken)"
+	  SrcPort		  1
+	  Points		  [150, 0]
+	  DstBlock		  "CAN error2"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead17"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead15"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead6"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead18"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  15
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead16"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  14
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead19"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -5]
+	  DstBlock		  "(Daten verschicken)"
+	  DstPort		  19
 	}
       }
     }
@@ -6377,7 +7290,7 @@ Model {
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
       InitialValue	      "CellNo"
-      OutDataTypeStr	      "double"
+      OutDataTypeStr	      "uint16"
     }
     Block {
       BlockType		      Reference
@@ -6465,7 +7378,7 @@ Model {
       ZOrder		      -4
       BackgroundColor	      "gray"
       Value		      "[1 1 1 1]"
-      SampleTime	      "0.000250"
+      SampleTime	      "0.00025"
     }
     Block {
       BlockType		      Reference
@@ -6617,8 +7530,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Limit Monitoring\nBalancing"
-	Location		[2, 70, 1422, 748]
-	Open			on
+	Location		[6, 83, 1266, 765]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6646,6 +7559,7 @@ Model {
 	  SID			  "19299"
 	  Position		  [415, 300, 445, 330]
 	  ZOrder		  -5
+	  Value			  "V_min_cell"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6653,6 +7567,7 @@ Model {
 	  SID			  "19300"
 	  Position		  [475, 320, 505, 350]
 	  ZOrder		  -5
+	  Value			  "V_max_cell"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6660,6 +7575,7 @@ Model {
 	  SID			  "19301"
 	  Position		  [515, 340, 545, 370]
 	  ZOrder		  -5
+	  Value			  "T_min_cell"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6667,6 +7583,7 @@ Model {
 	  SID			  "19302"
 	  Position		  [560, 360, 590, 390]
 	  ZOrder		  -5
+	  Value			  "T_max_cell"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6674,6 +7591,7 @@ Model {
 	  SID			  "19303"
 	  Position		  [485, 380, 515, 410]
 	  ZOrder		  -5
+	  Value			  "V_min_bat"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6681,6 +7599,7 @@ Model {
 	  SID			  "19304"
 	  Position		  [485, 425, 515, 455]
 	  ZOrder		  -5
+	  Value			  "V_max_bat"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6688,6 +7607,7 @@ Model {
 	  SID			  "19305"
 	  Position		  [475, 280, 505, 310]
 	  ZOrder		  -5
+	  Value			  "I_max_line"
 	}
 	Block {
 	  BlockType		  Constant
@@ -6695,14 +7615,15 @@ Model {
 	  SID			  "19306"
 	  Position		  [540, 260, 570, 290]
 	  ZOrder		  -5
+	  Value			  "I_min_line"
 	}
 	Block {
 	  BlockType		  Constant
 	  Name			  "Constant8"
 	  SID			  "19311"
-	  Position		  [900, 245, 930, 275]
+	  Position		  [910, 220, 940, 250]
 	  ZOrder		  -5
-	  OutDataTypeStr	  "uint8"
+	  OutDataTypeStr	  "uint16"
 	}
 	Block {
 	  BlockType		  DataStoreRead
@@ -6719,7 +7640,7 @@ Model {
 	  Name			  "Data Store\nRead2"
 	  SID			  "19296"
 	  Ports			  [0, 1]
-	  Position		  [360, 235, 445, 275]
+	  Position		  [155, 310, 240, 350]
 	  ZOrder		  -3
 	  ShowName		  off
 	  DataStoreName		  "CellNo"
@@ -6729,7 +7650,7 @@ Model {
 	  Name			  "Data Store\nRead3"
 	  SID			  "19297"
 	  Ports			  [0, 1]
-	  Position		  [215, 380, 300, 420]
+	  Position		  [155, 380, 240, 420]
 	  ZOrder		  -3
 	  ShowName		  off
 	  DataStoreName		  "V_min_cell"
@@ -6769,27 +7690,57 @@ Model {
 	  Name			  "Data Store\nWrite1"
 	  SID			  "18659"
 	  Ports			  [1]
-	  Position		  [960, 165, 1055, 195]
+	  Position		  [1070, 305, 1165, 335]
 	  ZOrder		  -11
 	  ShowName		  off
 	  DataStoreName		  "error"
 	}
 	Block {
 	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite10"
+	  SID			  "19322"
+	  Ports			  [1]
+	  Position		  [1170, 509, 1265, 541]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index7"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite11"
+	  SID			  "19323"
+	  Ports			  [1]
+	  Position		  [1170, 539, 1265, 571]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index8"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite2"
+	  SID			  "19317"
+	  Ports			  [1]
+	  Position		  [1170, 359, 1265, 391]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index2"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
 	  Name			  "Data Store\nWrite3"
 	  SID			  "18661"
 	  Ports			  [1]
-	  Position		  [1175, 324, 1270, 356]
+	  Position		  [1170, 329, 1265, 361]
 	  ZOrder		  -13
 	  ShowName		  off
-	  DataStoreName		  "error_index"
+	  DataStoreName		  "error_index1"
 	}
 	Block {
 	  BlockType		  DataStoreWrite
 	  Name			  "Data Store\nWrite4"
 	  SID			  "19310"
 	  Ports			  [1]
-	  Position		  [990, 244, 1085, 276]
+	  Position		  [1005, 219, 1100, 251]
 	  ZOrder		  -12
 	  ShowName		  off
 	  DataStoreName		  "error_code"
@@ -6805,11 +7756,51 @@ Model {
 	  DataStoreName		  "balance_vec"
 	}
 	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite6"
+	  SID			  "19318"
+	  Ports			  [1]
+	  Position		  [1170, 389, 1265, 421]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index3"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite7"
+	  SID			  "19319"
+	  Ports			  [1]
+	  Position		  [1170, 419, 1265, 451]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index4"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite8"
+	  SID			  "19320"
+	  Ports			  [1]
+	  Position		  [1170, 449, 1265, 481]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index5"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite9"
+	  SID			  "19321"
+	  Ports			  [1]
+	  Position		  [1170, 479, 1265, 511]
+	  ZOrder		  -13
+	  ShowName		  off
+	  DataStoreName		  "error_index6"
+	}
+	Block {
 	  BlockType		  Demux
 	  Name			  "Demux"
 	  SID			  "19309"
 	  Ports			  [1, 8]
-	  Position		  [1090, 339, 1100, 446]
+	  Position		  [1035, 336, 1045, 564]
 	  ZOrder		  -7
 	  ShowName		  off
 	  Outputs		  "8"
@@ -6948,7 +7939,7 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "balancing algorithm\n[mV]"
 	  SID			  "18663"
-	  Ports			  [1, 1]
+	  Ports			  [2, 1]
 	  Position		  [405, 492, 590, 708]
 	  ZOrder		  -2
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -6987,13 +7978,21 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "14"
+	    SIDHighWatermark	    "15"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "cell_voltage_in"
 	      SID		      "18663::1"
 	      Position		      [20, 101, 40, 119]
 	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CellNo"
+	      SID		      "18663::15"
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -7009,11 +8008,11 @@ Model {
 	      Name		      " SFunction "
 	      SID		      "18663::11"
 	      Tag		      "Stateflow S-Function Batman_Code 8"
-	      Ports		      [1, 2]
+	      Ports		      [2, 2]
 	      Position		      [180, 100, 230, 160]
 	      FunctionName	      "sf_sfun"
-	      Parameters	      "CellNo,max_delta_V_cell"
-	      PortCounts	      "[1 2]"
+	      Parameters	      "max_delta_V_cell"
+	      PortCounts	      "[2 2]"
 	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
@@ -7043,6 +8042,12 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      SrcBlock		      "CellNo"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
 	      Name		      "balance_vec_out"
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
@@ -7069,7 +8074,7 @@ Model {
 	  Name			  "limit monitoring\n[mV] / [K] / [mA]"
 	  SID			  "18664"
 	  Ports			  [14, 3]
-	  Position		  [655, 129, 840, 441]
+	  Position		  [670, 224, 855, 536]
 	  ZOrder		  -15
 	  ErrorFcn		  "Stateflow.Translate.translate"
 	  PermitHierarchicalResolution "ExplicitOnly"
@@ -7417,7 +8422,7 @@ Model {
 	Line {
 	  SrcBlock		  "Data Store\nRead6"
 	  SrcPort		  1
-	  Points		  [0, -15; 330, 0]
+	  Points		  [0, -15; 345, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  4
 	}
@@ -7426,12 +8431,12 @@ Model {
 	  SrcPort		  1
 	  Points		  [35, 0]
 	  Branch {
-	    Points		    [295, 0]
+	    Points		    [310, 0]
 	    DstBlock		    "limit monitoring\n[mV] / [K] / [mA]"
 	    DstPort		    2
 	  }
 	  Branch {
-	    Points		    [0, 435]
+	    Points		    [0, 380]
 	    DstBlock		    "balancing algorithm\n[mV]"
 	    DstPort		    1
 	  }
@@ -7439,12 +8444,14 @@ Model {
 	Line {
 	  SrcBlock		  "Data Store\nRead7"
 	  SrcPort		  1
+	  Points		  [345, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  SrcPort		  1
+	  Points		  [0, -95; 195, 0]
 	  DstBlock		  "Data Store\nWrite1"
 	  DstPort		  1
 	}
@@ -7457,70 +8464,85 @@ Model {
 	Line {
 	  SrcBlock		  "Data Store\nRead1"
 	  SrcPort		  1
-	  Points		  [0, -35; 280, 0; 0, -5]
+	  Points		  [0, -35; 280, 0; 0, 90]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Data Store\nRead2"
 	  SrcPort		  1
-	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
-	  DstPort		  6
+	  Points		  [50, 0]
+	  Branch {
+	    Points		    [360, 0]
+	    DstBlock		    "limit monitoring\n[mV] / [K] / [mA]"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 325]
+	    DstBlock		    "balancing algorithm\n[mV]"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
+	  Points		  [205, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  9
 	}
 	Line {
 	  SrcBlock		  "Constant1"
 	  SrcPort		  1
+	  Points		  [145, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  10
 	}
 	Line {
 	  SrcBlock		  "Constant2"
 	  SrcPort		  1
+	  Points		  [105, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  11
 	}
 	Line {
 	  SrcBlock		  "Constant3"
 	  SrcPort		  1
+	  Points		  [60, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  12
 	}
 	Line {
 	  SrcBlock		  "Constant4"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, 15; 95, 0]
+	  Points		  [25, 0; 0, 15; 110, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  13
 	}
 	Line {
 	  SrcBlock		  "Constant5"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, -20; 100, 0]
+	  Points		  [20, 0; 0, -20; 115, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  14
 	}
 	Line {
 	  SrcBlock		  "Constant6"
 	  SrcPort		  1
+	  Points		  [145, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  8
 	}
 	Line {
 	  SrcBlock		  "Constant7"
 	  SrcPort		  1
+	  Points		  [80, 0]
 	  DstBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  DstPort		  7
 	}
 	Line {
 	  SrcBlock		  "limit monitoring\n[mV] / [K] / [mA]"
 	  SrcPort		  3
-	  Points		  [230, 0]
+	  Points		  [0, -95; 160, 0]
 	  DstBlock		  "Demux"
 	  DstPort		  1
 	}
@@ -7534,6 +8556,48 @@ Model {
 	  SrcBlock		  "Constant8"
 	  SrcPort		  1
 	  DstBlock		  "Data Store\nWrite4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Data Store\nWrite2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Data Store\nWrite6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Data Store\nWrite7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Data Store\nWrite8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "Data Store\nWrite11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Data Store\nWrite10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Data Store\nWrite9"
 	  DstPort		  1
 	}
       }
@@ -7600,8 +8664,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"SoC_Estimation"
-	Location		[6, 74, 1418, 744]
-	Open			on
+	Location		[10, 82, 1253, 752]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8680,14 +9744,14 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "V_min_cell"
       SID		      "19298"
-      Position		      [319, 642, 411, 675]
+      Position		      [319, 657, 411, 690]
       ZOrder		      4
       DataStoreName	      "V_min_cell"
       ReadBeforeWriteMsg      "warning"
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
       InitialValue	      "CellNo"
-      OutDataTypeStr	      "double"
+      OutDataTypeStr	      "uint16"
     }
     Block {
       BlockType		      DataStoreMemory
@@ -9116,7 +10180,7 @@ Model {
       ReadBeforeWriteMsg      "warning"
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
-      OutDataTypeStr	      "uint8"
+      OutDataTypeStr	      "uint16"
     }
     Block {
       BlockType		      DataStoreMemory
@@ -9128,15 +10192,99 @@ Model {
       ReadBeforeWriteMsg      "warning"
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
-      OutDataTypeStr	      "uint8"
+      OutDataTypeStr	      "uint16"
     }
     Block {
       BlockType		      DataStoreMemory
-      Name		      "error index"
-      SID		      "18435"
-      Position		      [316, 420, 413, 455]
+      Name		      "error index1"
+      SID		      "19324"
+      Position		      [121, 740, 218, 775]
       ZOrder		      -9
-      DataStoreName	      "error_index"
+      DataStoreName	      "error_index1"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index2"
+      SID		      "19325"
+      Position		      [221, 740, 318, 775]
+      ZOrder		      -9
+      DataStoreName	      "error_index2"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index3"
+      SID		      "19326"
+      Position		      [316, 740, 413, 775]
+      ZOrder		      -9
+      DataStoreName	      "error_index3"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index4"
+      SID		      "19327"
+      Position		      [411, 740, 508, 775]
+      ZOrder		      -9
+      DataStoreName	      "error_index4"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index5"
+      SID		      "19328"
+      Position		      [121, 795, 218, 830]
+      ZOrder		      -9
+      DataStoreName	      "error_index5"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index6"
+      SID		      "19329"
+      Position		      [221, 795, 318, 830]
+      ZOrder		      -9
+      DataStoreName	      "error_index6"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index7"
+      SID		      "19330"
+      Position		      [316, 795, 413, 830]
+      ZOrder		      -9
+      DataStoreName	      "error_index7"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "uint16"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "error index8"
+      SID		      "19331"
+      Position		      [411, 795, 508, 830]
+      ZOrder		      -9
+      DataStoreName	      "error_index8"
       ReadBeforeWriteMsg      "warning"
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
@@ -17037,7 +18185,7 @@ Stateflow {
     name		    "Batman_Code"
     created		    "28-Mar-2012 14:15:33"
     isLibrary		    0
-    firstTarget		    172
+    firstTarget		    181
     sfVersion		    76014001.0002
   }
   chart {
@@ -17199,7 +18347,7 @@ Stateflow {
     firstJunction	    12
     viewObj		    10
     machine		    1
-    ssIdHighWaterMark	    46
+    ssIdHighWaterMark	    56
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    14
@@ -17224,66 +18372,76 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [trig_0, can_low_0, can_high_0,trig_1, can_low_1, can_high_1, trig_2, can_low_2, can_hig"
-      "h_2, trig_3, can_low_3, can_high_3, trig_4, can_low_4, can_high_4, trig_5, can_low_5, can_high_5, trig_6, can_lo"
-      "w_6, can_high_6, trig_7, can_low_7, can_high_7, trig_8, can_low_8, can_high_8, error_code_out, error_index_out, "
-      "error_out]= fcn(cell_voltages_in, cell_temperatures_in, SoC_in, voltage_in, current_in, balance_vec_in, bat_mode"
-      ", error_code_in, error_index_in, error_in, lol1, lol2, CellNo)\n\npersistent timer;\nif isempty(timer)\n    time"
-      "r = uint8(1);\nend\nmsg = uint32(0);\n\ntrig_0 = false;\ntrig_1 = false;\ntrig_2 = false;\ntrig_3 = false;\ntrig"
-      "_4 = false;\ntrig_5 = false;\ntrig_6 = false;\ntrig_7 = false;\ntrig_8 = false;\n\ncan_low_0 = uint32(0);\ncan_h"
-      "igh_0 = uint32(0);\ncan_low_1 = uint32(0);\ncan_high_1 = uint32(0);\ncan_low_2 = uint32(0);\ncan_high_2 = uint32"
-      "(0);\ncan_low_3 = uint32(0);\ncan_high_3 = uint32(0);\ncan_low_4 = uint32(0);\ncan_high_4 = uint32(0);\ncan_low_"
-      "5 = uint32(0);\ncan_high_5 = uint32(0);\ncan_low_6 = uint32(0);\ncan_high_6 = uint32(0);\ncan_low_7 = uint32(0);"
-      "\ncan_high_7 = uint32(0);\ncan_low_8 = uint32(0);\ncan_high_8 = uint32(0);\n\n\nif (error_in == 1)              "
-      "                                           % Fehlernachricht verschicken   \n    msg_1 = uint32(error_code_in);\n"
-      "    msg_2 = uint32(error_index_in);  \n    msg_3 = uint32(0);\n    msg_4 = uint32(error_in);\n    msg_0_1 = uint"
-      "32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_0_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));\n    can_low_0 = ui"
-      "nt32(msg_0_1);\n    can_high_0 = uint32(msg_0_2);\n    trig_0 = true;  \n    %%error_code_in = uint8(0);\n    %%"
-      "error_in = uint8(0);\n    %%error_index_in = uint8(0);\n    %%error_code_in = uint16(0);\n    %error_in = uint16"
-      "(0);\n    %error_index_in = uint16(0);\nelseif (error_in == 2)                                                  "
-      "       % Fehlernachricht verschicken\n    msg_1 = uint32(0);\n    msg_2 = uint32(0);\n    msg_3 = uint32(0);\n  "
-      "  msg_4 = uint32(0);\n    msg_0_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_0_2 = uint32(bitor(msg_3,b"
-      "itshift(msg_4,16)));\n    can_low_0 = uint32(msg_0_1);\n    can_high_0 = uint32(msg_0_2);\n    trig_0 = true;\n "
-      "   %%error_code_in = uint8(0);\n    %%error_in = uint8(0);\n    %%error_index_in = uint8(0);\n    %error_code_in"
-      " = uint16(0);\n    %error_in = uint16(0);\n    %error_index_in = uint16(0);\nend\n\nif (timer == 1)             "
-      "                                               % Zellspannungen verschicken  \n    msg_1 = uint32(cell_voltages_"
-      "in(1));\n    msg_2 = uint32(cell_voltages_in(2));  \n    msg_3 = uint32(cell_voltages_in(3));\n    msg_4 = uint3"
-      "2(cell_voltages_in(4));\n    msg_1_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_1_2 = uint32(bitor(msg_"
-      "3,bitshift(msg_4,16)));\n    can_low_1 = uint32(msg_1_1);\n    can_high_1 = uint32(msg_1_2);\n    trig_1 = true;"
-      "\nend\n    \nif (timer == 2) \n    msg_5 = uint32(cell_voltages_in(5));\n    msg_6 = uint32(cell_voltages_in(6))"
-      ";  \n    msg_7 = uint32(cell_voltages_in(7));\n    msg_8 = uint32(cell_voltages_in(8));\n    msg_2_1 = uint32(bi"
-      "tor(msg_5,bitshift(msg_6,16)));\n    msg_2_2 = uint32(bitor(msg_7,bitshift(msg_8,16)));\n    can_low_2 = uint32("
-      "msg_2_1);\n    can_high_2 = uint32(msg_2_2);\n    trig_2 = true;\nend\n\nif (timer == 3)     \n    msg_9 = uint3"
-      "2(cell_voltages_in(9));\n    msg_10 = uint32(cell_voltages_in(10));  \n    msg_11 = uint32(cell_voltages_in(11))"
-      ";\n    msg_12 = uint32(cell_voltages_in(12));\n    msg_3_1 = uint32(bitor(msg_9,bitshift(msg_10,16)));\n    msg_"
-      "3_2 = uint32(bitor(msg_11,bitshift(msg_12,16)));\n    can_low_3 = uint32(msg_3_1);\n    can_high_3 = uint32(msg_"
-      "3_2);\n    trig_3 = true;\nend\n\nif (timer == 4)                                                            % Z"
-      "elltemperaturen verschicken  \n    msg_1 = uint32(cell_temperatures_in(1));\n    msg_2 = uint32(cell_temperature"
-      "s_in(2));  \n    msg_3 = uint32(cell_temperatures_in(3));\n    msg_4 = uint32(cell_temperatures_in(4));\n    msg"
-      "_4_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_4_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));\n    can"
-      "_low_4 = uint32(msg_4_1);\n    can_high_4 = uint32(msg_4_2);\n    trig_4 = true;\nend\n\nif (timer == 5) \n    m"
-      "sg_5 = uint32(cell_temperatures_in(5));\n    msg_6 = uint32(cell_temperatures_in(6));  \n    msg_7 = uint32(cell"
-      "_temperatures_in(7));\n    msg_8 = uint32(cell_temperatures_in(8));\n    msg_5_1 = uint32(bitor(msg_5,bitshift(m"
-      "sg_6,16)));\n    msg_5_2 = uint32(bitor(msg_7,bitshift(msg_8,16)));\n    can_low_5 = uint32(msg_5_1);\n    can_h"
-      "igh_5 = uint32(msg_5_2);\n    trig_5 = true;\nend\n\nif (timer == 6) \n    msg_9 = uint32(cell_temperatures_in(9"
-      "));\n    msg_10 = uint32(cell_temperatures_in(10));  \n    msg_11 = uint32(cell_temperatures_in(11));\n    msg_1"
-      "2 = uint32(cell_temperatures_in(12));\n    msg_6_1 = uint32(bitor(msg_9,bitshift(msg_10,16)));\n    msg_6_2 = ui"
-      "nt32(bitor(msg_11,bitshift(msg_12,16)));\n    can_low_6 = uint32(msg_6_1);\n    can_high_6 = uint32(msg_6_2);\n "
-      "   trig_6 = true;\nend\n\nif (timer == 7)                                                            % SoC, Span"
-      "nung, Strom verschicken \n    msg_1 = uint32(SoC_in);\n    msg_2 = uint32(voltage_in);  \n    msg_3 = uint32(cur"
-      "rent_in);\n    msg_4 = uint32(bat_mode);\n    msg_7_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_7_2 = "
-      "uint32(bitor(msg_3,bitshift(msg_4,16)));   \n    can_low_7 = uint32(msg_7_1);\n    can_high_7 = uint32(msg_7_2);"
-      "\n    trig_7 = true;   \nend\n\nif (timer == 8)                                                            % Bal"
-      "ance-Vector verschicken  \n    for i = 1:1:CellNo\n        if (balance_vec_in(i) == 1)\n            msg = bitor("
-      "msg,bitshift(uint32(1),i-1));\n        else\n            msg = bitand(msg,bitcmp(bitshift(uint32(1),i-1)));\n   "
-      "     end\n    end\n    msg_1 = uint32(msg);\n    msg_2 = uint32(0);  \n    msg_3 = uint32(lol1);\n    msg_4 = ui"
-      "nt32(lol2);\n    msg_8_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_8_2 = uint32(bitor(msg_3,bitshift(m"
-      "sg_4,16)));   \n    can_low_8 = uint32(msg_8_1);\n    can_high_8 = uint32(msg_8_2);\n    trig_8 = true;   \nend\n"
-      "\ntimer = timer + 1;                                                         % Timer hochzählen lassen\n\nif (ti"
-      "mer > 8)                                                             % Timer nach 8 Runden zurücksetzen\n    tim"
-      "er = uint8(1);\nend\n\n% Ausgabe\nerror_code_out = error_code_in;\nerror_index_out = error_index_in;\nerror_out "
-      "= error_in;\n"
-      editorLayout	      "100 M4x1[10 5 1296 808]"
+      script		      "function [trig_9, can_low_9, can_high_9, trig_0, can_low_0, can_high_0, trig_1, can_low_1, can_hi"
+      "gh_1, trig_2, can_low_2, can_high_2, trig_3, can_low_3, can_high_3, trig_4, can_low_4, can_high_4, trig_5, can_l"
+      "ow_5, can_high_5, trig_6, can_low_6, can_high_6, trig_7, can_low_7, can_high_7, trig_8, can_low_8, can_high_8, e"
+      "rror_code_out, error_index_out, error_out]= fcn(cell_voltages_in, cell_temperatures_in, SoC_in, voltage_in, curr"
+      "ent_in, balance_vec_in, bat_mode, error_index_in1, error_index_in2, error_index_in3, error_index_in4,error_index"
+      "_in5, error_index_in6, error_index_in7, error_index_in8, error_in,lol1, lol2, CellNo)\n\npersistent timer;\nif i"
+      "sempty(timer)\n    timer = uint8(1);\nend\nmsg = uint32(0);\n\ntrig_9 = false;\ntrig_0 = false;\ntrig_1 = false;"
+      "\ntrig_2 = false;\ntrig_3 = false;\ntrig_4 = false;\ntrig_5 = false;\ntrig_6 = false;\ntrig_7 = false;\ntrig_8 ="
+      " false;\n\n\ncan_low_9 = uint32(0);\ncan_high_9 = uint32(0);\ncan_low_0 = uint32(0);\ncan_high_0 = uint32(0);\nc"
+      "an_low_1 = uint32(0);\ncan_high_1 = uint32(0);\ncan_low_2 = uint32(0);\ncan_high_2 = uint32(0);\ncan_low_3 = uin"
+      "t32(0);\ncan_high_3 = uint32(0);\ncan_low_4 = uint32(0);\ncan_high_4 = uint32(0);\ncan_low_5 = uint32(0);\ncan_h"
+      "igh_5 = uint32(0);\ncan_low_6 = uint32(0);\ncan_high_6 = uint32(0);\ncan_low_7 = uint32(0);\ncan_high_7 = uint32"
+      "(0);\ncan_low_8 = uint32(0);\ncan_high_8 = uint32(0);\n\n\nif (error_in == 1)                                   "
+      "                      % Fehlernachricht verschicken   \n    %msg_1 = uint32(error_code_in);\n    %msg_2 = uint32"
+      "(error_index_in);  \n    %msg_3 = uint32(0);\n    %msg_4 = uint32(error_in);\n    msg_1 = uint32(error_index_in1"
+      ");\n    msg_2 = uint32(error_index_in2);  \n    msg_3 = uint32(error_index_in3);  \n    msg_4 = uint32(error_ind"
+      "ex_in4);  \n    \n    msg_0_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_0_2 = uint32(bitor(msg_3,bitsh"
+      "ift(msg_4,16)));\n    can_low_0 = uint32(msg_0_1);\n    can_high_0 = uint32(msg_0_2);\n    trig_0 = true;  \n   "
+      " %%%%%%%%%%%%%%%%%%%%%%%%%%%%second part of error messages\n    msg_1 = uint32(error_index_in5);\n    msg_2 = ui"
+      "nt32(error_index_in6);  \n    msg_3 = uint32(error_index_in7);  \n    msg_4 = uint32(error_index_in8);  \n    \n"
+      "    msg_0_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_0_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));\n"
+      "    can_low_9 = uint32(msg_0_1);\n    can_high_9 = uint32(msg_0_2);\n    trig_9 = true;  \n    \n    \n    \n   "
+      " \n    %%error_code_in = uint8(0);\n    %%error_in = uint8(0);\n    %%error_index_in = uint8(0);\n    %%error_co"
+      "de_in = uint16(0);\n    %error_in = uint16(0);\n    %error_index_in = uint16(0);\n\nelseif (error_in == 2)      "
+      "                                                   % Fehlernachricht verschicken\n    msg_1 = uint32(0);\n    ms"
+      "g_2 = uint32(0);\n    msg_3 = uint32(0);\n    msg_4 = uint32(0);\n    msg_0_1 = uint32(bitor(msg_1,bitshift(msg_"
+      "2,16)));\n    msg_0_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));\n    can_low_0 = uint32(msg_0_1);\n    can_high"
+      "_0 = uint32(msg_0_2);\n    trig_0 = true;\n    %%error_code_in = uint8(0);\n    %%error_in = uint8(0);\n    %%er"
+      "ror_index_in = uint8(0);\n    %error_code_in = uint16(0);\n    %error_in = uint16(0);\n    %error_index_in = uin"
+      "t16(0);\nend\n\nif (timer == 1)                                                            % Zellspannungen vers"
+      "chicken  \n    msg_1 = uint32(cell_voltages_in(1));%%sind eigentlich  nur 16 bit\n    msg_2 = uint32(cell_voltag"
+      "es_in(2));  \n    msg_3 = uint32(cell_voltages_in(3));\n    msg_4 = uint32(cell_voltages_in(4));\n    msg_1_1 = "
+      "uint32(bitor(msg_1,bitshift(msg_2,16)));%%Nachricht 1 + 2 á 16bit zu einer neuen Nachricht 1 mit 2*32bit zusamme"
+      "nbauen\n    msg_1_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));\n    can_low_1 = uint32(msg_1_1);\n    can_high_1"
+      " = uint32(msg_1_2);\n    trig_1 = true;\nend\n    \nif (timer == 2) \n    msg_5 = uint32(cell_voltages_in(5));\n"
+      "    msg_6 = uint32(cell_voltages_in(6));  \n    msg_7 = uint32(cell_voltages_in(7));\n    msg_8 = uint32(cell_vo"
+      "ltages_in(8));\n    msg_2_1 = uint32(bitor(msg_5,bitshift(msg_6,16)));\n    msg_2_2 = uint32(bitor(msg_7,bitshif"
+      "t(msg_8,16)));\n    can_low_2 = uint32(msg_2_1);\n    can_high_2 = uint32(msg_2_2);\n    trig_2 = true;\nend\n\n"
+      "if (timer == 3)     \n    msg_9 = uint32(cell_voltages_in(9));\n    msg_10 = uint32(cell_voltages_in(10));  \n  "
+      "  msg_11 = uint32(cell_voltages_in(11));\n    msg_12 = uint32(cell_voltages_in(12));\n    msg_3_1 = uint32(bitor"
+      "(msg_9,bitshift(msg_10,16)));\n    msg_3_2 = uint32(bitor(msg_11,bitshift(msg_12,16)));\n    can_low_3 = uint32("
+      "msg_3_1);\n    can_high_3 = uint32(msg_3_2);\n    trig_3 = true;\nend\n\nif (timer == 4)                        "
+      "                                    % Zelltemperaturen verschicken  \n    msg_1 = uint32(cell_temperatures_in(1)"
+      ");\n    msg_2 = uint32(cell_temperatures_in(2));  \n    msg_3 = uint32(cell_temperatures_in(3));\n    msg_4 = ui"
+      "nt32(cell_temperatures_in(4));\n    msg_4_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    msg_4_2 = uint32(bit"
+      "or(msg_3,bitshift(msg_4,16)));\n    can_low_4 = uint32(msg_4_1);\n    can_high_4 = uint32(msg_4_2);\n    trig_4 "
+      "= true;\nend\n\nif (timer == 5) \n    msg_5 = uint32(cell_temperatures_in(5));\n    msg_6 = uint32(cell_temperat"
+      "ures_in(6));  \n    msg_7 = uint32(cell_temperatures_in(7));\n    msg_8 = uint32(cell_temperatures_in(8));\n    "
+      "msg_5_1 = uint32(bitor(msg_5,bitshift(msg_6,16)));\n    msg_5_2 = uint32(bitor(msg_7,bitshift(msg_8,16)));\n    "
+      "can_low_5 = uint32(msg_5_1);\n    can_high_5 = uint32(msg_5_2);\n    trig_5 = true;\nend\n\nif (timer == 6) \n  "
+      "  msg_9 = uint32(cell_temperatures_in(9));\n    msg_10 = uint32(cell_temperatures_in(10));  \n    msg_11 = uint3"
+      "2(cell_temperatures_in(11));\n    msg_12 = uint32(cell_temperatures_in(12));\n    msg_6_1 = uint32(bitor(msg_9,b"
+      "itshift(msg_10,16)));\n    msg_6_2 = uint32(bitor(msg_11,bitshift(msg_12,16)));\n    can_low_6 = uint32(msg_6_1)"
+      ";\n    can_high_6 = uint32(msg_6_2);\n    trig_6 = true;\nend\n\nif (timer == 7)                                "
+      "                            % SoC, Spannung, Strom verschicken \n    msg_1 = uint32(SoC_in);\n    msg_2 = uint32"
+      "(voltage_in);  \n    msg_3 = uint32(current_in);\n    msg_4 = uint32(bat_mode);\n    msg_7_1 = uint32(bitor(msg_"
+      "1,bitshift(msg_2,16)));\n    msg_7_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));   \n    can_low_7 = uint32(msg_7"
+      "_1);\n    can_high_7 = uint32(msg_7_2);\n    trig_7 = true;   \nend\n\nif (timer == 8)                          "
+      "                                  % Balance-Vector verschicken  \n    for i = 1:1:CellNo\n        if (balance_ve"
+      "c_in(i) == 1)\n            msg = bitor(msg,bitshift(uint32(1),i-1));\n        else\n            msg = bitand(msg"
+      ",bitcmp(bitshift(uint32(1),i-1)));\n        end\n    end\n    msg_1 = uint32(msg);\n    msg_2 = uint32(0);  \n  "
+      "  msg_3 = uint32(lol1);\n    msg_4 = uint32(lol2);\n    msg_8_1 = uint32(bitor(msg_1,bitshift(msg_2,16)));\n    "
+      "msg_8_2 = uint32(bitor(msg_3,bitshift(msg_4,16)));   \n    can_low_8 = uint32(msg_8_1);\n    can_high_8 = uint32"
+      "(msg_8_2);\n    trig_8 = true;   \nend\n%%%%Versuch von Manuel %%%%%%%%%%%%%\n%weiteres Telegram konfigurieren\n"
+      "\n\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\ntimer = timer + 1;                                                       "
+      "  % Timer hochzählen lassen\n\nif (timer > 8)                                                             % Time"
+      "r nach 8 Runden zurücksetzen\n    timer = uint8(1);\nend\n\n% Ausgabe\n%error_code_out = error_code_in;\n%error_"
+      "index_out = error_index_in;\n%error_out = error_in;\nerror_code_out = uint16(1);\nerror_index_out = uint16(1);\n"
+      "error_out = uint16(1);"
+      editorLayout	      "100 M4x1[10 67 1292 808]"
       fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
       "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
       fimathForFiConstructors FimathMatlabFactoryDefault
@@ -17326,7 +18484,7 @@ Stateflow {
   data {
     id			    14
     ssIdNumber		    4
-    name		    "trig_0"
+    name		    "trig_9"
     linkNode		    [10 0 15]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17348,7 +18506,7 @@ Stateflow {
   data {
     id			    15
     ssIdNumber		    5
-    name		    "can_low_0"
+    name		    "can_low_9"
     linkNode		    [10 14 16]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17369,8 +18527,8 @@ Stateflow {
   }
   data {
     id			    16
-    ssIdNumber		    6
-    name		    "can_high_0"
+    ssIdNumber		    49
+    name		    "can_high_9"
     linkNode		    [10 15 17]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17391,8 +18549,8 @@ Stateflow {
   }
   data {
     id			    17
-    ssIdNumber		    7
-    name		    "trig_1"
+    ssIdNumber		    50
+    name		    "trig_0"
     linkNode		    [10 16 18]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17413,75 +18571,9 @@ Stateflow {
   }
   data {
     id			    18
-    ssIdNumber		    8
-    name		    "cell_voltages_in"
+    ssIdNumber		    51
+    name		    "can_low_0"
     linkNode		    [10 17 19]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    19
-    ssIdNumber		    9
-    name		    "cell_temperatures_in"
-    linkNode		    [10 18 20]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    20
-    ssIdNumber		    10
-    name		    "SoC_in"
-    linkNode		    [10 19 21]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    21
-    ssIdNumber		    11
-    name		    "can_low_1"
-    linkNode		    [10 20 22]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -17500,9 +18592,75 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
+    id			    19
+    ssIdNumber		    6
+    name		    "can_high_0"
+    linkNode		    [10 18 20]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    20
+    ssIdNumber		    7
+    name		    "trig_1"
+    linkNode		    [10 19 21]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    21
+    ssIdNumber		    8
+    name		    "cell_voltages_in"
+    linkNode		    [10 20 22]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
     id			    22
-    ssIdNumber		    12
-    name		    "voltage_in"
+    ssIdNumber		    9
+    name		    "cell_temperatures_in"
     linkNode		    [10 21 23]
     scope		    INPUT_DATA
     machine		    1
@@ -17523,10 +18681,10 @@ Stateflow {
   }
   data {
     id			    23
-    ssIdNumber		    13
-    name		    "can_high_1"
+    ssIdNumber		    10
+    name		    "SoC_in"
     linkNode		    [10 22 24]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -17539,14 +18697,14 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    24
-    ssIdNumber		    14
-    name		    "trig_2"
+    ssIdNumber		    11
+    name		    "can_low_1"
     linkNode		    [10 23 25]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17567,8 +18725,8 @@ Stateflow {
   }
   data {
     id			    25
-    ssIdNumber		    15
-    name		    "current_in"
+    ssIdNumber		    12
+    name		    "voltage_in"
     linkNode		    [10 24 26]
     scope		    INPUT_DATA
     machine		    1
@@ -17589,8 +18747,8 @@ Stateflow {
   }
   data {
     id			    26
-    ssIdNumber		    16
-    name		    "can_low_2"
+    ssIdNumber		    13
+    name		    "can_high_1"
     linkNode		    [10 25 27]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17611,8 +18769,8 @@ Stateflow {
   }
   data {
     id			    27
-    ssIdNumber		    17
-    name		    "can_high_2"
+    ssIdNumber		    14
+    name		    "trig_2"
     linkNode		    [10 26 28]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17633,10 +18791,10 @@ Stateflow {
   }
   data {
     id			    28
-    ssIdNumber		    18
-    name		    "trig_3"
+    ssIdNumber		    15
+    name		    "current_in"
     linkNode		    [10 27 29]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -17649,14 +18807,14 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    29
-    ssIdNumber		    19
-    name		    "can_low_3"
+    ssIdNumber		    16
+    name		    "can_low_2"
     linkNode		    [10 28 30]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17677,8 +18835,8 @@ Stateflow {
   }
   data {
     id			    30
-    ssIdNumber		    20
-    name		    "can_high_3"
+    ssIdNumber		    17
+    name		    "can_high_2"
     linkNode		    [10 29 31]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17699,8 +18857,8 @@ Stateflow {
   }
   data {
     id			    31
-    ssIdNumber		    21
-    name		    "trig_4"
+    ssIdNumber		    18
+    name		    "trig_3"
     linkNode		    [10 30 32]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17721,8 +18879,8 @@ Stateflow {
   }
   data {
     id			    32
-    ssIdNumber		    22
-    name		    "can_low_4"
+    ssIdNumber		    19
+    name		    "can_low_3"
     linkNode		    [10 31 33]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17743,8 +18901,8 @@ Stateflow {
   }
   data {
     id			    33
-    ssIdNumber		    23
-    name		    "can_high_4"
+    ssIdNumber		    20
+    name		    "can_high_3"
     linkNode		    [10 32 34]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17765,8 +18923,8 @@ Stateflow {
   }
   data {
     id			    34
-    ssIdNumber		    24
-    name		    "trig_5"
+    ssIdNumber		    21
+    name		    "trig_4"
     linkNode		    [10 33 35]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17787,8 +18945,8 @@ Stateflow {
   }
   data {
     id			    35
-    ssIdNumber		    25
-    name		    "can_low_5"
+    ssIdNumber		    22
+    name		    "can_low_4"
     linkNode		    [10 34 36]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17809,8 +18967,8 @@ Stateflow {
   }
   data {
     id			    36
-    ssIdNumber		    26
-    name		    "can_high_5"
+    ssIdNumber		    23
+    name		    "can_high_4"
     linkNode		    [10 35 37]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17831,8 +18989,8 @@ Stateflow {
   }
   data {
     id			    37
-    ssIdNumber		    27
-    name		    "trig_6"
+    ssIdNumber		    24
+    name		    "trig_5"
     linkNode		    [10 36 38]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17853,8 +19011,8 @@ Stateflow {
   }
   data {
     id			    38
-    ssIdNumber		    28
-    name		    "can_low_6"
+    ssIdNumber		    25
+    name		    "can_low_5"
     linkNode		    [10 37 39]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17875,8 +19033,8 @@ Stateflow {
   }
   data {
     id			    39
-    ssIdNumber		    29
-    name		    "can_high_6"
+    ssIdNumber		    26
+    name		    "can_high_5"
     linkNode		    [10 38 40]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17897,8 +19055,8 @@ Stateflow {
   }
   data {
     id			    40
-    ssIdNumber		    30
-    name		    "trig_7"
+    ssIdNumber		    27
+    name		    "trig_6"
     linkNode		    [10 39 41]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17919,8 +19077,8 @@ Stateflow {
   }
   data {
     id			    41
-    ssIdNumber		    31
-    name		    "can_low_7"
+    ssIdNumber		    28
+    name		    "can_low_6"
     linkNode		    [10 40 42]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17941,8 +19099,8 @@ Stateflow {
   }
   data {
     id			    42
-    ssIdNumber		    32
-    name		    "can_high_7"
+    ssIdNumber		    29
+    name		    "can_high_6"
     linkNode		    [10 41 43]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17963,8 +19121,8 @@ Stateflow {
   }
   data {
     id			    43
-    ssIdNumber		    33
-    name		    "trig_8"
+    ssIdNumber		    30
+    name		    "trig_7"
     linkNode		    [10 42 44]
     scope		    OUTPUT_DATA
     machine		    1
@@ -17985,8 +19143,8 @@ Stateflow {
   }
   data {
     id			    44
-    ssIdNumber		    34
-    name		    "can_low_8"
+    ssIdNumber		    31
+    name		    "can_low_7"
     linkNode		    [10 43 45]
     scope		    OUTPUT_DATA
     machine		    1
@@ -18007,8 +19165,8 @@ Stateflow {
   }
   data {
     id			    45
-    ssIdNumber		    35
-    name		    "can_high_8"
+    ssIdNumber		    32
+    name		    "can_high_7"
     linkNode		    [10 44 46]
     scope		    OUTPUT_DATA
     machine		    1
@@ -18029,8 +19187,8 @@ Stateflow {
   }
   data {
     id			    46
-    ssIdNumber		    36
-    name		    "error_code_out"
+    ssIdNumber		    33
+    name		    "trig_8"
     linkNode		    [10 45 47]
     scope		    OUTPUT_DATA
     machine		    1
@@ -18051,8 +19209,8 @@ Stateflow {
   }
   data {
     id			    47
-    ssIdNumber		    37
-    name		    "error_index_out"
+    ssIdNumber		    34
+    name		    "can_low_8"
     linkNode		    [10 46 48]
     scope		    OUTPUT_DATA
     machine		    1
@@ -18073,10 +19231,10 @@ Stateflow {
   }
   data {
     id			    48
-    ssIdNumber		    38
-    name		    "balance_vec_in"
+    ssIdNumber		    35
+    name		    "can_high_8"
     linkNode		    [10 47 49]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -18089,16 +19247,16 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    49
-    ssIdNumber		    44
-    name		    "bat_mode"
+    ssIdNumber		    36
+    name		    "error_code_out"
     linkNode		    [10 48 50]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -18111,16 +19269,16 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    50
-    ssIdNumber		    39
-    name		    "error_code_in"
+    ssIdNumber		    37
+    name		    "error_index_out"
     linkNode		    [10 49 51]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -18133,14 +19291,14 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    51
-    ssIdNumber		    40
-    name		    "error_index_in"
+    ssIdNumber		    38
+    name		    "balance_vec_in"
     linkNode		    [10 50 52]
     scope		    INPUT_DATA
     machine		    1
@@ -18161,8 +19319,8 @@ Stateflow {
   }
   data {
     id			    52
-    ssIdNumber		    41
-    name		    "error_in"
+    ssIdNumber		    44
+    name		    "bat_mode"
     linkNode		    [10 51 53]
     scope		    INPUT_DATA
     machine		    1
@@ -18183,8 +19341,8 @@ Stateflow {
   }
   data {
     id			    53
-    ssIdNumber		    45
-    name		    "lol1"
+    ssIdNumber		    39
+    name		    "error_index_in1"
     linkNode		    [10 52 54]
     scope		    INPUT_DATA
     machine		    1
@@ -18205,8 +19363,8 @@ Stateflow {
   }
   data {
     id			    54
-    ssIdNumber		    46
-    name		    "lol2"
+    ssIdNumber		    40
+    name		    "error_index_in2"
     linkNode		    [10 53 55]
     scope		    INPUT_DATA
     machine		    1
@@ -18227,9 +19385,207 @@ Stateflow {
   }
   data {
     id			    55
+    ssIdNumber		    41
+    name		    "error_index_in3"
+    linkNode		    [10 54 56]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    56
+    ssIdNumber		    47
+    name		    "error_index_in4"
+    linkNode		    [10 55 57]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    57
+    ssIdNumber		    52
+    name		    "error_index_in5"
+    linkNode		    [10 56 58]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    58
+    ssIdNumber		    53
+    name		    "error_index_in6"
+    linkNode		    [10 57 59]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    59
+    ssIdNumber		    54
+    name		    "error_index_in7"
+    linkNode		    [10 58 60]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    60
+    ssIdNumber		    55
+    name		    "error_index_in8"
+    linkNode		    [10 59 61]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    61
+    ssIdNumber		    48
+    name		    "error_in"
+    linkNode		    [10 60 62]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    62
+    ssIdNumber		    45
+    name		    "lol1"
+    linkNode		    [10 61 63]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    63
+    ssIdNumber		    46
+    name		    "lol2"
+    linkNode		    [10 62 64]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    64
     ssIdNumber		    42
     name		    "error_out"
-    linkNode		    [10 54 56]
+    linkNode		    [10 63 65]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18248,12 +19604,11 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    56
-    ssIdNumber		    43
+    id			    65
+    ssIdNumber		    56
     name		    "CellNo"
-    linkNode		    [10 55 0]
-    scope		    PARAMETER_DATA
-    initFromWorkspace	    1
+    linkNode		    [10 64 0]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -18271,26 +19626,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    57
+    id			    66
     name		    "CAN-Transmit/(Daten verschicken)"
     machine		    1
     chart		    10
   }
   chart {
-    id			    58
+    id			    67
     name		    "CAN-Receive/Function-Call\nSubsystem3/data"
     windowPosition	    [421 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 59 0 0]
-    firstTransition	    61
-    firstJunction	    60
-    viewObj		    58
+    treeNode		    [0 68 0 0]
+    firstTransition	    70
+    firstJunction	    69
+    viewObj		    67
     machine		    1
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    62
+    firstData		    71
     chartFileNumber	    4
     disableImplicitCasting  1
     eml {
@@ -18299,14 +19654,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    59
+    id			    68
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    58
-    treeNode		    [58 0 0 0]
+    chart		    67
+    treeNode		    [67 0 0 0]
     superState		    SUBCHART
-    subviewer		    58
+    subviewer		    67
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -18327,16 +19682,16 @@ Stateflow {
     }
   }
   junction {
-    id			    60
+    id			    69
     position		    [23.5747 49.5747 7]
-    chart		    58
-    linkNode		    [58 0 0]
-    subviewer		    58
+    chart		    67
+    linkNode		    [67 0 0]
+    subviewer		    67
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    61
+    id			    70
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -18344,14 +19699,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      60
+      id		      69
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    58
-    linkNode		    [58 0 0]
+    chart		    67
+    linkNode		    [67 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    58
+    subviewer		    67
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -18360,10 +19715,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    62
+    id			    71
     ssIdNumber		    4
     name		    "current_RTPC_out"
-    linkNode		    [58 0 63]
+    linkNode		    [67 0 72]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18382,10 +19737,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    63
+    id			    72
     ssIdNumber		    5
     name		    "voltage_RTPC_out"
-    linkNode		    [58 62 64]
+    linkNode		    [67 71 73]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18404,10 +19759,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    64
+    id			    73
     ssIdNumber		    6
     name		    "msg"
-    linkNode		    [58 63 65]
+    linkNode		    [67 72 74]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -18426,10 +19781,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    65
+    id			    74
     ssIdNumber		    7
     name		    "bat_mode_out"
-    linkNode		    [58 64 66]
+    linkNode		    [67 73 75]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18448,10 +19803,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    66
+    id			    75
     ssIdNumber		    8
     name		    "operation_mode_out"
-    linkNode		    [58 65 0]
+    linkNode		    [67 74 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18470,26 +19825,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    67
+    id			    76
     name		    "CAN-Receive/Function-Call\nSubsystem3/data"
     machine		    1
-    chart		    58
+    chart		    67
   }
   chart {
-    id			    68
+    id			    77
     name		    "CAN-Receive/Function-Call\nSubsystem2/CAN_Daten_verwenden/Volt_03"
     windowPosition	    [396 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 69 0 0]
-    firstTransition	    71
-    firstJunction	    70
-    viewObj		    68
+    treeNode		    [0 78 0 0]
+    firstTransition	    80
+    firstJunction	    79
+    viewObj		    77
     machine		    1
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    72
+    firstData		    81
     chartFileNumber	    5
     disableImplicitCasting  1
     eml {
@@ -18498,14 +19853,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    69
+    id			    78
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    68
-    treeNode		    [68 0 0 0]
+    chart		    77
+    treeNode		    [77 0 0 0]
     superState		    SUBCHART
-    subviewer		    68
+    subviewer		    77
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -18524,16 +19879,16 @@ Stateflow {
     }
   }
   junction {
-    id			    70
+    id			    79
     position		    [23.5747 49.5747 7]
-    chart		    68
-    linkNode		    [68 0 0]
-    subviewer		    68
+    chart		    77
+    linkNode		    [77 0 0]
+    subviewer		    77
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    71
+    id			    80
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -18541,14 +19896,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      70
+      id		      79
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    68
-    linkNode		    [68 0 0]
+    chart		    77
+    linkNode		    [77 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    68
+    subviewer		    77
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -18557,10 +19912,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    72
+    id			    81
     ssIdNumber		    4
     name		    "msg"
-    linkNode		    [68 0 73]
+    linkNode		    [77 0 82]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -18575,181 +19930,15 @@ Stateflow {
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    73
-    ssIdNumber		    5
-    name		    "cell_voltages_in"
-    linkNode		    [68 72 74]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    74
-    ssIdNumber		    6
-    name		    "cell_voltages_out"
-    linkNode		    [68 73 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  instance {
-    id			    75
-    name		    "CAN-Receive/Function-Call\nSubsystem2/CAN_Daten_verwenden/Volt_03"
-    machine		    1
-    chart		    68
-  }
-  chart {
-    id			    76
-    name		    "Limit Monitoring\nBalancing/balancing algorithm\n[mV]"
-    windowPosition	    [393 248.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 77 0 0]
-    firstTransition	    79
-    firstJunction	    78
-    viewObj		    76
-    machine		    1
-    ssIdHighWaterMark	    8
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    80
-    chartFileNumber	    8
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-    supportVariableSizing   0
-  }
-  state {
-    id			    77
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    76
-    treeNode		    [76 0 0 0]
-    superState		    SUBCHART
-    subviewer		    76
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function balance_vec_out  = fcn(cell_voltage_in, CellNo, max_delta_V_cell)\n% balancing algorithm"
-      "\n\n% initialization\npersistent balance_vec;\nbalance_vec=ones(1,12);\n\n% Output\nbalance_vec_out = uint16(bal"
-      "ance_vec);\n\n\n"
-      editorLayout	      "100 M4x1[163 111 1448 880]"
-      fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
-      "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
-      fimathForFiConstructors FimathMatlabFactoryDefault
-      emlDefaultFimath	      FimathUserSpecified
-    }
-  }
-  junction {
-    id			    78
-    position		    [23.5747 49.5747 7]
-    chart		    76
-    linkNode		    [76 0 0]
-    subviewer		    76
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    79
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      78
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    76
-    linkNode		    [76 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    76
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  data {
-    id			    80
-    ssIdNumber		    4
-    name		    "cell_voltage_in"
-    linkNode		    [76 0 81]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_UINT16_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    81
-    ssIdNumber		    6
-    name		    "balance_vec_out"
-    linkNode		    [76 80 82]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_UINT8_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    82
-    ssIdNumber		    7
-    name		    "CellNo"
-    linkNode		    [76 81 83]
-    scope		    PARAMETER_DATA
-    initFromWorkspace	    1
+    ssIdNumber		    5
+    name		    "cell_voltages_in"
+    linkNode		    [77 81 83]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -18758,22 +19947,17 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    83
-    ssIdNumber		    8
-    name		    "max_delta_V_cell"
-    linkNode		    [76 82 0]
-    scope		    PARAMETER_DATA
-    initFromWorkspace	    1
-    paramIndexForInitFromWorkspace 1
+    ssIdNumber		    6
+    name		    "cell_voltages_out"
+    linkNode		    [77 82 0]
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -18782,24 +19966,22 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
     id			    84
-    name		    "Limit Monitoring\nBalancing/balancing algorithm\n[mV]"
+    name		    "CAN-Receive/Function-Call\nSubsystem2/CAN_Daten_verwenden/Volt_03"
     machine		    1
-    chart		    76
+    chart		    77
   }
   chart {
     id			    85
-    name		    "CAN-Receive/Function-Call\nSubsystem4/CAN_Daten_verwenden/Temp_01"
-    windowPosition	    [376 248.75 213 385]
+    name		    "Limit Monitoring\nBalancing/balancing algorithm\n[mV]"
+    windowPosition	    [393 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
     treeNode		    [0 86 0 0]
@@ -18807,11 +19989,11 @@ Stateflow {
     firstJunction	    87
     viewObj		    85
     machine		    1
-    ssIdHighWaterMark	    6
+    ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    89
-    chartFileNumber	    9
+    chartFileNumber	    8
     disableImplicitCasting  1
     eml {
       name		      "fcn"
@@ -18832,12 +20014,10 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function cell_temperatures_out = fcn(msg, cell_temperatures_in)\n% Datenempfang über CAN\n\n\n% A"
-      "uslesen der CAN-Nachricht\nx1 = uint16(bitand(uint32(65535),bitshift(msg(1),-0)));\nx2 = uint16(bitand(uint32(65"
-      "535),bitshift(msg(1),-16)));\nx3 = uint16(bitand(uint32(65535),bitshift(msg(2),-0)));\nx4 = uint16(bitand(uint32"
-      "(65535),bitshift(msg(2),-16)));\n\ncell_temperatures_in(1) = x1;\ncell_temperatures_in(2) = x2;\ncell_temperatur"
-      "es_in(3) = x3;\ncell_temperatures_in(4) = x4;\n\n\n% Ausgabe\ncell_temperatures_out = cell_temperatures_in;\n"
-      editorLayout	      "100 M4x1[45 159 651 488]"
+      script		      "function balance_vec_out  = fcn(cell_voltage_in,CellNo, max_delta_V_cell)\n% balancing algorithm\n"
+      "\n% initialization\npersistent balance_vec;\nbalance_vec=ones(1,12);\n\n% Output\nbalance_vec_out = uint16(balan"
+      "ce_vec);\n\n\n"
+      editorLayout	      "100 M4x1[163 214 1292 880]"
       fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
       "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
       fimathForFiConstructors FimathMatlabFactoryDefault
@@ -18880,8 +20060,27 @@ Stateflow {
   data {
     id			    89
     ssIdNumber		    4
-    name		    "msg"
+    name		    "cell_voltage_in"
     linkNode		    [85 0 90]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_UINT16_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    90
+    ssIdNumber		    9
+    name		    "CellNo"
+    linkNode		    [85 89 91]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -18900,10 +20099,164 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    90
+    id			    91
+    ssIdNumber		    6
+    name		    "balance_vec_out"
+    linkNode		    [85 90 92]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    92
+    ssIdNumber		    8
+    name		    "max_delta_V_cell"
+    linkNode		    [85 91 0]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    93
+    name		    "Limit Monitoring\nBalancing/balancing algorithm\n[mV]"
+    machine		    1
+    chart		    85
+  }
+  chart {
+    id			    94
+    name		    "CAN-Receive/Function-Call\nSubsystem4/CAN_Daten_verwenden/Temp_01"
+    windowPosition	    [376 248.75 213 385]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 920 1.333333333333333]
+    treeNode		    [0 95 0 0]
+    firstTransition	    97
+    firstJunction	    96
+    viewObj		    94
+    machine		    1
+    ssIdHighWaterMark	    6
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    98
+    chartFileNumber	    9
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    supportVariableSizing   0
+  }
+  state {
+    id			    95
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    94
+    treeNode		    [94 0 0 0]
+    superState		    SUBCHART
+    subviewer		    94
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function cell_temperatures_out = fcn(msg, cell_temperatures_in)\n% Datenempfang über CAN\n\n\n% A"
+      "uslesen der CAN-Nachricht\nx1 = uint16(bitand(uint32(65535),bitshift(msg(1),-0)));\nx2 = uint16(bitand(uint32(65"
+      "535),bitshift(msg(1),-16)));\nx3 = uint16(bitand(uint32(65535),bitshift(msg(2),-0)));\nx4 = uint16(bitand(uint32"
+      "(65535),bitshift(msg(2),-16)));\n\ncell_temperatures_in(1) = x1;\ncell_temperatures_in(2) = x2;\ncell_temperatur"
+      "es_in(3) = x3;\ncell_temperatures_in(4) = x4;\n\n\n% Ausgabe\ncell_temperatures_out = cell_temperatures_in;\n"
+      editorLayout	      "100 M4x1[45 159 651 488]"
+      fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
+      "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
+      fimathForFiConstructors FimathMatlabFactoryDefault
+      emlDefaultFimath	      FimathUserSpecified
+    }
+  }
+  junction {
+    id			    96
+    position		    [23.5747 49.5747 7]
+    chart		    94
+    linkNode		    [94 0 0]
+    subviewer		    94
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    97
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      96
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    94
+    linkNode		    [94 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    94
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    98
+    ssIdNumber		    4
+    name		    "msg"
+    linkNode		    [94 0 99]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    99
     ssIdNumber		    5
     name		    "cell_temperatures_in"
-    linkNode		    [85 89 91]
+    linkNode		    [94 98 100]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -18919,10 +20272,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    91
+    id			    100
     ssIdNumber		    6
     name		    "cell_temperatures_out"
-    linkNode		    [85 90 0]
+    linkNode		    [94 99 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -18939,26 +20292,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    92
+    id			    101
     name		    "CAN-Receive/Function-Call\nSubsystem4/CAN_Daten_verwenden/Temp_01"
     machine		    1
-    chart		    85
+    chart		    94
   }
   chart {
-    id			    93
+    id			    102
     name		    "CAN-Receive/Function-Call\nSubsystem5/CAN_Daten_verwenden/Temp_02"
     windowPosition	    [396 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 94 0 0]
-    firstTransition	    96
-    firstJunction	    95
-    viewObj		    93
+    treeNode		    [0 103 0 0]
+    firstTransition	    105
+    firstJunction	    104
+    viewObj		    102
     machine		    1
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    97
+    firstData		    106
     chartFileNumber	    10
     disableImplicitCasting  1
     eml {
@@ -18967,14 +20320,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    94
+    id			    103
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    93
-    treeNode		    [93 0 0 0]
+    chart		    102
+    treeNode		    [102 0 0 0]
     superState		    SUBCHART
-    subviewer		    93
+    subviewer		    102
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -18993,16 +20346,16 @@ Stateflow {
     }
   }
   junction {
-    id			    95
+    id			    104
     position		    [23.5747 49.5747 7]
-    chart		    93
-    linkNode		    [93 0 0]
-    subviewer		    93
+    chart		    102
+    linkNode		    [102 0 0]
+    subviewer		    102
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    96
+    id			    105
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -19010,14 +20363,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      95
+      id		      104
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    93
-    linkNode		    [93 0 0]
+    chart		    102
+    linkNode		    [102 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    93
+    subviewer		    102
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -19026,10 +20379,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    97
+    id			    106
     ssIdNumber		    4
     name		    "msg"
-    linkNode		    [93 0 98]
+    linkNode		    [102 0 107]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19048,10 +20401,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    98
+    id			    107
     ssIdNumber		    5
     name		    "cell_temperatures_in"
-    linkNode		    [93 97 99]
+    linkNode		    [102 106 108]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19067,10 +20420,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    99
+    id			    108
     ssIdNumber		    6
     name		    "cell_temperatures_out"
-    linkNode		    [93 98 0]
+    linkNode		    [102 107 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19087,26 +20440,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    100
+    id			    109
     name		    "CAN-Receive/Function-Call\nSubsystem5/CAN_Daten_verwenden/Temp_02"
     machine		    1
-    chart		    93
+    chart		    102
   }
   chart {
-    id			    101
+    id			    110
     name		    "CAN-Receive/Function-Call\nSubsystem6/CAN_Daten_verwenden/Temp_03"
     windowPosition	    [396 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 102 0 0]
-    firstTransition	    104
-    firstJunction	    103
-    viewObj		    101
+    treeNode		    [0 111 0 0]
+    firstTransition	    113
+    firstJunction	    112
+    viewObj		    110
     machine		    1
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    105
+    firstData		    114
     chartFileNumber	    11
     disableImplicitCasting  1
     eml {
@@ -19115,14 +20468,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    102
+    id			    111
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    101
-    treeNode		    [101 0 0 0]
+    chart		    110
+    treeNode		    [110 0 0 0]
     superState		    SUBCHART
-    subviewer		    101
+    subviewer		    110
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -19142,16 +20495,16 @@ Stateflow {
     }
   }
   junction {
-    id			    103
+    id			    112
     position		    [23.5747 49.5747 7]
-    chart		    101
-    linkNode		    [101 0 0]
-    subviewer		    101
+    chart		    110
+    linkNode		    [110 0 0]
+    subviewer		    110
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    104
+    id			    113
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -19159,14 +20512,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      103
+      id		      112
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    101
-    linkNode		    [101 0 0]
+    chart		    110
+    linkNode		    [110 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    101
+    subviewer		    110
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -19175,10 +20528,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    105
+    id			    114
     ssIdNumber		    4
     name		    "msg"
-    linkNode		    [101 0 106]
+    linkNode		    [110 0 115]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19197,10 +20550,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    106
+    id			    115
     ssIdNumber		    5
     name		    "cell_temperatures_in"
-    linkNode		    [101 105 107]
+    linkNode		    [110 114 116]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19216,10 +20569,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    107
+    id			    116
     ssIdNumber		    6
     name		    "cell_temperatures_out"
-    linkNode		    [101 106 0]
+    linkNode		    [110 115 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19236,26 +20589,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    108
+    id			    117
     name		    "CAN-Receive/Function-Call\nSubsystem6/CAN_Daten_verwenden/Temp_03"
     machine		    1
-    chart		    101
+    chart		    110
   }
   chart {
-    id			    109
+    id			    118
     name		    "Limit Monitoring\nBalancing/limit monitoring\n[mV] / [K] / [mA]"
     windowPosition	    [373 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 110 0 0]
-    firstTransition	    112
-    firstJunction	    111
-    viewObj		    109
+    treeNode		    [0 119 0 0]
+    firstTransition	    121
+    firstJunction	    120
+    viewObj		    118
     machine		    1
     ssIdHighWaterMark	    33
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    113
+    firstData		    122
     chartFileNumber	    12
     disableImplicitCasting  1
     eml {
@@ -19264,14 +20617,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    110
+    id			    119
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    109
-    treeNode		    [109 0 0 0]
+    chart		    118
+    treeNode		    [118 0 0 0]
     superState		    SUBCHART
-    subviewer		    109
+    subviewer		    118
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -19280,34 +20633,34 @@ Stateflow {
       script		      "%function [error_out, error_code_out, error_index_out] = limit_monitoring(cell_voltage_in, V_min_"
       "cell)\nfunction [error_out, error_code_out,  error_index_out] = limit_monitoring(fcn, cell_voltage_in, cell_temp"
       "eratures_in, current_in, voltage_in,  CellNo, I_min_line, I_max_line, V_min_cell, V_max_cell, T_min_cell, T_max_"
-      "cell, V_min_bat, V_max_bat)\n\nerror_code=zeros(1,10);\nindex=1;\nerror_index=zeros(8);\ntemp_find_index=zeros(1"
-      ",12);\n\nif ( min(cell_voltage_in)<=V_min_cell ) \n   error_code(index)= uint8(11);\n    index=index+1;\n    %% "
-      "temp_find=find(cell_voltage_in(1:12)<=V_min_cell); %%find concerning cells\n   %error_index2=cell_voltage_in;\n "
-      "  % error_index(find(cell_voltage_in <= V_min_cell))=1;\n     %TEST\n  %%error_index(1, find(cell_voltage_in <= "
-      "V_min_cell))=uint8(11); %%find concerning cells\n   \n\n  for i=1:1:CellNo\n    if (cell_voltage_in(i)<=V_min_ce"
-      "ll)%%error_index works like BCD\n        error_index(1)=error_index(1,i)+2^(CellNo-1); %%only the index of affec"
-      "ted cells; Error Code depends on the row in the matrix\n    end;\n end;\n \nend;  \nif ( max(cell_voltage_in)>=V"
-      "_max_cell ) \n    error_code(index) = uint8(12);\n    index=index+1;\n    \n      for i=1:1:CellNo\n         if "
-      "(cell_voltage_in(i)<=V_max_cell)\n             error_index(2)=error_index(2,i)+2^(CellNo-1); %%only the index of"
-      " affected cells; Error Code depends on the row in the matrix\n         end;\n      end;\n   \nend;\nif (min(cell"
-      "_temperatures_in+273)<= T_min_cell )\n    error_code(index) = uint8(21);\n    index=index+1;\n    %%error_index("
-      "find((cell_temperatures_in+273)<=T_min_cell))=1; %%find concerning cells\n      for i=1:1:CellNo\n         if (c"
-      "ell_temperatures_in(i)<=T_min_cell)\n              error_index(3)=error_index(3,i)+2^(CellNo-1); %%only the inde"
-      "x of affected cells; Error Code depends on the row in the matrix\n         end;\n      end;\n      \n    %TEST E"
-      "NDE\n    %error_matrix(2,:)=uint8(21)*temp_find;\nend;\nif (max(cell_temperatures_in+273)>=T_max_cell )\n    err"
-      "or_code(index) = uint8(22);\n    index=index+1;\n   \n     for i=1:1:CellNo\n         if (cell_temperatures_in(i"
-      ")>=T_max_cell)\n             error_index(4)=error_index(4,i)+2^(CellNo-1); %%only the index of affected cells; E"
-      "rror Code depends on the row in the matrix\n         end;\n      end; \n      \n   \nend;\nif (current_in>= I_ma"
-      "x_line ) %%Charge Current to high\n    error_code(index) = uint8(31);\n    index=index+1;\n   error_index(5)=409"
-      "6;\n    %error_matrix(3,:)=uint8(31)*ones(1,12);%%always concernes all cells\nend;\nif (current_in<= I_min_line "
-      ") %%Discharge current too high\n    error_code(index) =uint8(32);\n    index=index+1;\nerror_index(6)=4096; %%bi"
-      "niary: 1111111111110000\n    %error_matrix(3,:)=uint8(31)*ones(1,12)\nend;\nif (voltage_in<= V_min_bat )\n    er"
-      "ror_code(index) =uint8(41);\n    index=index+1;\nerror_index(7)=4096; %%biniary: 1111111111110000\n    %error_ma"
-      "trix(4,:)=uint8(41)*ones(1,12)\nend;\nif (voltage_in>= V_max_bat )\n    error_code(index) = uint8(42); \n    ind"
-      "ex=index+1;\nerror_index(8)=4096; %%biniary: 1111111111110000\n    %error_matrix(4,:)=uint8(41)*ones(1,12)\nend;"
-      "\n\nif(index==1)\nerror_out=uint8(1);\nelse\nerror_out=uint8(0);\nend;\n\n\n\n\nerror_code_out=uint8(error_code)"
-      ";\nerror_index_out=uint16(error_index);"
-      editorLayout	      "100 M4x1[10 67 1448 776]"
+      "cell, V_min_bat, V_max_bat)\n\nerror_code=zeros(1,10);\nindex=1;\nerror_index=zeros(8,1);\ntemp_find_index=zeros"
+      "(1,12);\n\nif ( min(cell_voltage_in)<=V_min_cell ) \n   error_code(index)= uint8(11);\n    index=index+1;\n    %"
+      "% temp_find=find(cell_voltage_in(1:12)<=V_min_cell); %%find concerning cells\n   %error_index2=cell_voltage_in;\n"
+      "   % error_index(find(cell_voltage_in <= V_min_cell))=1;\n     %TEST\n  %%error_index(1, find(cell_voltage_in <="
+      " V_min_cell))=uint8(11); %%find concerning cells\n   \n\n  for i=1:1:CellNo\n    if (cell_voltage_in(i)<=V_min_c"
+      "ell)%%error_index works like BCD\n        error_index(1)=error_index(1)+2^(i-1); %%only the index of affected ce"
+      "lls; Error Code depends on the row in the matrix\n    end;\n end;\n \nend;  \nif ( max(cell_voltage_in)>=V_max_c"
+      "ell ) \n    error_code(index) = uint8(12);\n    index=index+1;\n    \n      for i=1:1:CellNo\n         if (cell_"
+      "voltage_in(i)<=V_max_cell)\n             error_index(2)=error_index(2)+2^(i-1); %%only the index of affected cel"
+      "ls; Error Code depends on the row in the matrix\n         end;\n      end;\n   \nend;\nif (min(cell_temperatures"
+      "_in+273)<= T_min_cell )\n    error_code(index) = uint8(21);\n    index=index+1;\n    %%error_index(find((cell_te"
+      "mperatures_in+273)<=T_min_cell))=1; %%find concerning cells\n      for i=1:1:CellNo\n         if ((cell_temperat"
+      "ures_in(i)+273)<=T_min_cell)\n              error_index(3)=error_index(3)+2^(i-1); %%only the index of affected "
+      "cells; Error Code depends on the row in the matrix\n         end;\n      end;\n      \n    %TEST ENDE\n    %erro"
+      "r_matrix(2,:)=uint8(21)*temp_find;\nend;\nif (max(cell_temperatures_in+273)>=T_max_cell )\n    error_code(index)"
+      " = uint8(22);\n    index=index+1;\n   \n     for i=1:1:CellNo\n         if ((cell_temperatures_in(i)+273)>=T_max"
+      "_cell)\n             error_index(4)=error_index(4)+2^(i-1); %%only the index of affected cells; Error Code depen"
+      "ds on the row in the matrix\n         end;\n      end; \n      \n   \nend;\nif (current_in>= I_max_line ) %%Char"
+      "ge Current to high\n    error_code(index) = uint8(31);\n    index=index+1;\n   error_index(5)=4095;\n    %error_"
+      "matrix(3,:)=uint8(31)*ones(1,12);%%always concernes all cells\nend;\nif (current_in<= I_min_line ) %%Discharge c"
+      "urrent too high\n    error_code(index) =uint8(32);\n    index=index+1;\nerror_index(6)=4095; %%biniary: 11111111"
+      "11110000\n    %error_matrix(3,:)=uint8(31)*ones(1,12)\nend;\nif (voltage_in<= V_min_bat )\n    error_code(index)"
+      " =uint8(41);\n    index=index+1;\nerror_index(7)=4095; %%biniary: 1111111111110000\n    %error_matrix(4,:)=uint8"
+      "(41)*ones(1,12)\nend;\nif (voltage_in>= V_max_bat )\n    error_code(index) = uint8(42); \n    index=index+1;\ner"
+      "ror_index(8)=4095; %%biniary: 1111111111110000\n    %error_matrix(4,:)=uint8(41)*ones(1,12)\nend;\n\nif(index==1"
+      ")\nerror_out_temp=0; %%no error was detected\nelse\nerror_out_temp=1; %%one or more errors occured\nend;\n\n\n\n"
+      "error_out=uint16(error_out_temp);\nerror_code_out=uint16(error_code);\nerror_index_out=uint16(error_index);"
+      editorLayout	      "100 M4x1[10 67 1292 776]"
       breakpoints	      "100 M[16]"
       fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
       "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
@@ -19316,16 +20669,16 @@ Stateflow {
     }
   }
   junction {
-    id			    111
+    id			    120
     position		    [23.5747 49.5747 7]
-    chart		    109
-    linkNode		    [109 0 0]
-    subviewer		    109
+    chart		    118
+    linkNode		    [118 0 0]
+    subviewer		    118
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    112
+    id			    121
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -19333,14 +20686,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      111
+      id		      120
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    109
-    linkNode		    [109 0 0]
+    chart		    118
+    linkNode		    [118 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    109
+    subviewer		    118
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -19349,205 +20702,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    113
+    id			    122
     ssIdNumber		    24
     name		    "fcn"
-    linkNode		    [109 0 114]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    114
-    ssIdNumber		    4
-    name		    "cell_voltage_in"
-    linkNode		    [109 113 115]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_UINT16_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    115
-    ssIdNumber		    5
-    name		    "cell_temperatures_in"
-    linkNode		    [109 114 116]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    116
-    ssIdNumber		    6
-    name		    "current_in"
-    linkNode		    [109 115 117]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    117
-    ssIdNumber		    7
-    name		    "voltage_in"
-    linkNode		    [109 116 118]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    118
-    ssIdNumber		    11
-    name		    "error_out"
-    linkNode		    [109 117 119]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_UINT8_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    119
-    ssIdNumber		    12
-    name		    "error_code_out"
-    linkNode		    [109 118 120]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_BOOLEAN_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    120
-    ssIdNumber		    23
-    name		    "error_index_out"
-    linkNode		    [109 119 121]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    121
-    ssIdNumber		    25
-    name		    "CellNo"
-    linkNode		    [109 120 122]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    122
-    ssIdNumber		    26
-    name		    "I_min_line"
-    linkNode		    [109 121 123]
+    linkNode		    [118 0 123]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19567,9 +20725,9 @@ Stateflow {
   }
   data {
     id			    123
-    ssIdNumber		    27
-    name		    "I_max_line"
-    linkNode		    [109 122 124]
+    ssIdNumber		    4
+    name		    "cell_voltage_in"
+    linkNode		    [118 122 124]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19578,20 +20736,17 @@ Stateflow {
       }
       type {
 	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
+	primitive		SF_UINT16_TYPE
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    124
-    ssIdNumber		    28
-    name		    "V_min_cell"
-    linkNode		    [109 123 125]
+    ssIdNumber		    5
+    name		    "cell_temperatures_in"
+    linkNode		    [118 123 125]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19611,9 +20766,9 @@ Stateflow {
   }
   data {
     id			    125
-    ssIdNumber		    29
-    name		    "V_max_cell"
-    linkNode		    [109 124 126]
+    ssIdNumber		    6
+    name		    "current_in"
+    linkNode		    [118 124 126]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19633,9 +20788,9 @@ Stateflow {
   }
   data {
     id			    126
-    ssIdNumber		    30
-    name		    "T_min_cell"
-    linkNode		    [109 125 127]
+    ssIdNumber		    7
+    name		    "voltage_in"
+    linkNode		    [118 125 127]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19655,10 +20810,10 @@ Stateflow {
   }
   data {
     id			    127
-    ssIdNumber		    31
-    name		    "T_max_cell"
-    linkNode		    [109 126 128]
-    scope		    INPUT_DATA
+    ssIdNumber		    11
+    name		    "error_out"
+    linkNode		    [118 126 128]
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -19666,21 +20821,21 @@ Stateflow {
       }
       type {
 	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
+	primitive		SF_UINT8_TYPE
 	isSigned		1
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    128
-    ssIdNumber		    32
-    name		    "V_min_bat"
-    linkNode		    [109 127 129]
-    scope		    INPUT_DATA
+    ssIdNumber		    12
+    name		    "error_code_out"
+    linkNode		    [118 127 129]
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -19688,20 +20843,42 @@ Stateflow {
       }
       type {
 	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
+	primitive		SF_BOOLEAN_TYPE
 	isSigned		1
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    129
-    ssIdNumber		    33
-    name		    "V_max_bat"
-    linkNode		    [109 128 0]
+    ssIdNumber		    23
+    name		    "error_index_out"
+    linkNode		    [118 128 130]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    130
+    ssIdNumber		    25
+    name		    "CellNo"
+    linkNode		    [118 129 131]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19719,96 +20896,99 @@ Stateflow {
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  instance {
-    id			    130
-    name		    "Limit Monitoring\nBalancing/limit monitoring\n[mV] // [K] // [mA]"
-    machine		    1
-    chart		    109
-  }
-  chart {
+  data {
     id			    131
-    name		    "SoC_Estimation/Gesamtstrom\nGesamtspannung1"
-    windowPosition	    [529 248.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 132 0 0]
-    firstTransition	    134
-    firstJunction	    133
-    viewObj		    131
+    ssIdNumber		    26
+    name		    "I_min_line"
+    linkNode		    [118 130 132]
+    scope		    INPUT_DATA
     machine		    1
-    ssIdHighWaterMark	    6
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    135
-    chartFileNumber	    14
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
     }
-    supportVariableSizing   0
+    dataType		    "Inherit: Same as Simulink"
   }
-  state {
+  data {
     id			    132
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    131
-    treeNode		    [131 0 0 0]
-    superState		    SUBCHART
-    subviewer		    131
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function current_out = fcn(bat_mode_in, current_in)\n% This block supports the Embedded MATLAB su"
-      "bset.\n% See the help menu for details. \n\nif (bat_mode_in == 0)\n    current_out = current_in;\nelse\n    curr"
-      "ent_out = (current_in)*(-1);\nend\n\n"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-      fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
-      "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
-      fimathForFiConstructors FimathMatlabFactoryDefault
-      emlDefaultFimath	      FimathUserSpecified
+    ssIdNumber		    27
+    name		    "I_max_line"
+    linkNode		    [118 131 133]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
     }
+    dataType		    "Inherit: Same as Simulink"
   }
-  junction {
+  data {
     id			    133
-    position		    [23.5747 49.5747 7]
-    chart		    131
-    linkNode		    [131 0 0]
-    subviewer		    131
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
+    ssIdNumber		    28
+    name		    "V_min_cell"
+    linkNode		    [118 132 134]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
   }
-  transition {
+  data {
     id			    134
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    ssIdNumber		    29
+    name		    "V_max_cell"
+    linkNode		    [118 133 135]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
     }
-    dst {
-      id		      133
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    131
-    linkNode		    [131 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    131
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
+    dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    135
-    ssIdNumber		    4
-    name		    "bat_mode_in"
-    linkNode		    [131 0 136]
+    ssIdNumber		    30
+    name		    "T_min_cell"
+    linkNode		    [118 134 136]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19828,10 +21008,10 @@ Stateflow {
   }
   data {
     id			    136
-    ssIdNumber		    5
-    name		    "current_out"
-    linkNode		    [131 135 137]
-    scope		    OUTPUT_DATA
+    ssIdNumber		    31
+    name		    "T_max_cell"
+    linkNode		    [118 135 137]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -19844,15 +21024,37 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    137
-    ssIdNumber		    6
-    name		    "current_in"
-    linkNode		    [131 136 0]
+    ssIdNumber		    32
+    name		    "V_min_bat"
+    linkNode		    [118 136 138]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    138
+    ssIdNumber		    33
+    name		    "V_max_bat"
+    linkNode		    [118 137 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19871,26 +21073,177 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    138
-    name		    "SoC_Estimation/Gesamtstrom\nGesamtspannung1"
+    id			    139
+    name		    "Limit Monitoring\nBalancing/limit monitoring\n[mV] // [K] // [mA]"
     machine		    1
-    chart		    131
+    chart		    118
   }
   chart {
-    id			    139
-    name		    "CAN-Receive/Function-Call\nSubsystem/CAN_Daten_verwenden/Volt_01"
-    windowPosition	    [376 248.75 213 385]
+    id			    140
+    name		    "SoC_Estimation/Gesamtstrom\nGesamtspannung1"
+    windowPosition	    [529 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 140 0 0]
-    firstTransition	    142
-    firstJunction	    141
-    viewObj		    139
+    treeNode		    [0 141 0 0]
+    firstTransition	    143
+    firstJunction	    142
+    viewObj		    140
     machine		    1
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    143
+    firstData		    144
+    chartFileNumber	    14
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    supportVariableSizing   0
+  }
+  state {
+    id			    141
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    140
+    treeNode		    [140 0 0 0]
+    superState		    SUBCHART
+    subviewer		    140
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function current_out = fcn(bat_mode_in, current_in)\n% This block supports the Embedded MATLAB su"
+      "bset.\n% See the help menu for details. \n\nif (bat_mode_in == 0)\n    current_out = current_in;\nelse\n    curr"
+      "ent_out = (current_in)*(-1);\nend\n\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+      fimathString	      "fimath(...\n'RoundMode', 'floor',...\n'OverflowMode', 'wrap',...\n'ProductMode', 'KeepLSB', "
+      "'ProductWordLength', 32,...\n'SumMode', 'KeepLSB', 'SumWordLength', 32,...\n'CastBeforeSum', true)"
+      fimathForFiConstructors FimathMatlabFactoryDefault
+      emlDefaultFimath	      FimathUserSpecified
+    }
+  }
+  junction {
+    id			    142
+    position		    [23.5747 49.5747 7]
+    chart		    140
+    linkNode		    [140 0 0]
+    subviewer		    140
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    143
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      142
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    140
+    linkNode		    [140 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    140
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    144
+    ssIdNumber		    4
+    name		    "bat_mode_in"
+    linkNode		    [140 0 145]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    145
+    ssIdNumber		    5
+    name		    "current_out"
+    linkNode		    [140 144 146]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    146
+    ssIdNumber		    6
+    name		    "current_in"
+    linkNode		    [140 145 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    147
+    name		    "SoC_Estimation/Gesamtstrom\nGesamtspannung1"
+    machine		    1
+    chart		    140
+  }
+  chart {
+    id			    148
+    name		    "CAN-Receive/Function-Call\nSubsystem/CAN_Daten_verwenden/Volt_01"
+    windowPosition	    [376 248.75 213 385]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 920 1.333333333333333]
+    treeNode		    [0 149 0 0]
+    firstTransition	    151
+    firstJunction	    150
+    viewObj		    148
+    machine		    1
+    ssIdHighWaterMark	    6
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    152
     chartFileNumber	    16
     disableImplicitCasting  1
     eml {
@@ -19899,14 +21252,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    140
+    id			    149
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    139
-    treeNode		    [139 0 0 0]
+    chart		    148
+    treeNode		    [148 0 0 0]
     superState		    SUBCHART
-    subviewer		    139
+    subviewer		    148
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -19925,16 +21278,16 @@ Stateflow {
     }
   }
   junction {
-    id			    141
+    id			    150
     position		    [23.5747 49.5747 7]
-    chart		    139
-    linkNode		    [139 0 0]
-    subviewer		    139
+    chart		    148
+    linkNode		    [148 0 0]
+    subviewer		    148
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    142
+    id			    151
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -19942,14 +21295,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      141
+      id		      150
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    139
-    linkNode		    [139 0 0]
+    chart		    148
+    linkNode		    [148 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    139
+    subviewer		    148
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -19958,10 +21311,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    143
+    id			    152
     ssIdNumber		    4
     name		    "msg"
-    linkNode		    [139 0 144]
+    linkNode		    [148 0 153]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19980,10 +21333,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    144
+    id			    153
     ssIdNumber		    5
     name		    "cell_voltages_in"
-    linkNode		    [139 143 145]
+    linkNode		    [148 152 154]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19999,10 +21352,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    145
+    id			    154
     ssIdNumber		    6
     name		    "cell_voltages_out"
-    linkNode		    [139 144 0]
+    linkNode		    [148 153 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -20019,26 +21372,26 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    146
+    id			    155
     name		    "CAN-Receive/Function-Call\nSubsystem/CAN_Daten_verwenden/Volt_01"
     machine		    1
-    chart		    139
+    chart		    148
   }
   chart {
-    id			    147
+    id			    156
     name		    "SoC_Estimation/Extended Kalman Filter\n[mA] /  [mV]1"
     windowPosition	    [517 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 148 0 0]
-    firstTransition	    150
-    firstJunction	    149
-    viewObj		    147
+    treeNode		    [0 157 0 0]
+    firstTransition	    159
+    firstJunction	    158
+    viewObj		    156
     machine		    1
     ssIdHighWaterMark	    18
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    151
+    firstData		    160
     chartFileNumber	    17
     disableImplicitCasting  1
     eml {
@@ -20047,14 +21400,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    148
+    id			    157
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    147
-    treeNode		    [147 0 0 0]
+    chart		    156
+    treeNode		    [156 0 0 0]
     superState		    SUBCHART
-    subviewer		    147
+    subviewer		    156
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -20072,16 +21425,16 @@ Stateflow {
     }
   }
   junction {
-    id			    149
+    id			    158
     position		    [23.5747 49.5747 7]
-    chart		    147
-    linkNode		    [147 0 0]
-    subviewer		    147
+    chart		    156
+    linkNode		    [156 0 0]
+    subviewer		    156
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    150
+    id			    159
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -20089,14 +21442,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      149
+      id		      158
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    147
-    linkNode		    [147 0 0]
+    chart		    156
+    linkNode		    [156 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    147
+    subviewer		    156
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -20105,10 +21458,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    151
+    id			    160
     ssIdNumber		    4
     name		    "I_k"
-    linkNode		    [147 0 152]
+    linkNode		    [156 0 161]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -20125,10 +21478,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    152
+    id			    161
     ssIdNumber		    5
     name		    "SoC"
-    linkNode		    [147 151 153]
+    linkNode		    [156 160 162]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -20145,10 +21498,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    153
+    id			    162
     ssIdNumber		    6
     name		    "V_k"
-    linkNode		    [147 152 154]
+    linkNode		    [156 161 163]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -20165,10 +21518,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    154
+    id			    163
     ssIdNumber		    7
     name		    "A"
-    linkNode		    [147 153 155]
+    linkNode		    [156 162 164]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     machine		    1
@@ -20186,10 +21539,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    155
+    id			    164
     ssIdNumber		    8
     name		    "A_T"
-    linkNode		    [147 154 156]
+    linkNode		    [156 163 165]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 1
@@ -20208,10 +21561,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    156
+    id			    165
     ssIdNumber		    9
     name		    "B"
-    linkNode		    [147 155 157]
+    linkNode		    [156 164 166]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 2
@@ -20230,10 +21583,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    157
+    id			    166
     ssIdNumber		    10
     name		    "Q"
-    linkNode		    [147 156 158]
+    linkNode		    [156 165 167]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 4
@@ -20252,10 +21605,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    158
+    id			    167
     ssIdNumber		    11
     name		    "R"
-    linkNode		    [147 157 159]
+    linkNode		    [156 166 168]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 5
@@ -20274,10 +21627,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    159
+    id			    168
     ssIdNumber		    12
     name		    "R_i"
-    linkNode		    [147 158 160]
+    linkNode		    [156 167 169]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 6
@@ -20296,10 +21649,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    160
+    id			    169
     ssIdNumber		    13
     name		    "p"
-    linkNode		    [147 159 161]
+    linkNode		    [156 168 170]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 7
@@ -20319,10 +21672,10 @@ Stateflow {
     dataType		    "single"
   }
   data {
-    id			    161
+    id			    170
     ssIdNumber		    14
     name		    "P_0"
-    linkNode		    [147 160 0]
+    linkNode		    [156 169 0]
     scope		    PARAMETER_DATA
     initFromWorkspace	    1
     paramIndexForInitFromWorkspace 3
@@ -20341,26 +21694,26 @@ Stateflow {
     dataType		    "single"
   }
   instance {
-    id			    162
+    id			    171
     name		    "SoC_Estimation/Extended Kalman Filter\n[mA] //  [mV]1"
     machine		    1
-    chart		    147
+    chart		    156
   }
   chart {
-    id			    163
+    id			    172
     name		    "SoC_Estimation/battery_current [mA]\nbattery_voltage [mV]"
     windowPosition	    [496 248.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 920 1.333333333333333]
-    treeNode		    [0 164 0 0]
-    firstTransition	    166
-    firstJunction	    165
-    viewObj		    163
+    treeNode		    [0 173 0 0]
+    firstTransition	    175
+    firstJunction	    174
+    viewObj		    172
     machine		    1
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    167
+    firstData		    176
     chartFileNumber	    19
     disableImplicitCasting  1
     eml {
@@ -20369,14 +21722,14 @@ Stateflow {
     supportVariableSizing   0
   }
   state {
-    id			    164
+    id			    173
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    163
-    treeNode		    [163 0 0 0]
+    chart		    172
+    treeNode		    [172 0 0 0]
     superState		    SUBCHART
-    subviewer		    163
+    subviewer		    172
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -20394,16 +21747,16 @@ Stateflow {
     }
   }
   junction {
-    id			    165
+    id			    174
     position		    [23.5747 49.5747 7]
-    chart		    163
-    linkNode		    [163 0 0]
-    subviewer		    163
+    chart		    172
+    linkNode		    [172 0 0]
+    subviewer		    172
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    166
+    id			    175
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -20411,14 +21764,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      165
+      id		      174
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    163
-    linkNode		    [163 0 0]
+    chart		    172
+    linkNode		    [172 0 0]
     dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    163
+    subviewer		    172
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -20427,10 +21780,10 @@ Stateflow {
     ssIdNumber		    2
   }
   data {
-    id			    167
+    id			    176
     ssIdNumber		    4
     name		    "current_out"
-    linkNode		    [163 0 168]
+    linkNode		    [172 0 177]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -20449,10 +21802,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    168
+    id			    177
     ssIdNumber		    5
     name		    "currents_in"
-    linkNode		    [163 167 169]
+    linkNode		    [172 176 178]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -20471,10 +21824,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    169
+    id			    178
     ssIdNumber		    6
     name		    "voltages_in"
-    linkNode		    [163 168 170]
+    linkNode		    [172 177 179]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -20493,10 +21846,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    170
+    id			    179
     ssIdNumber		    7
     name		    "voltage_out"
-    linkNode		    [163 169 0]
+    linkNode		    [172 178 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -20515,22 +21868,22 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    171
+    id			    180
     name		    "SoC_Estimation/battery_current [mA]\nbattery_voltage [mV]"
     machine		    1
-    chart		    163
+    chart		    172
   }
   target {
-    id			    172
+    id			    181
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 173]
+    linkNode		    [1 0 182]
   }
   target {
-    id			    173
+    id			    182
     name		    "rtw"
     machine		    1
-    linkNode		    [1 172 0]
+    linkNode		    [1 181 0]
   }
 }

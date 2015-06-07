@@ -35,8 +35,8 @@ id_data_send_temperature_2 = hex2dec('212');       % CAN-Daten zum RTPC (Tempera
 id_data_send_temperature_3 = hex2dec('213');       % CAN-Daten zum RTPC (Temperatur 3)               
 id_data_send_balance = hex2dec('221');             % CAN-Daten zum RTPC (Balance)        
 id_data_send_data = hex2dec('231');                % CAN-Daten zum RTPC (Strom, SoC, Batteriespannung)             
-id_send_error = hex2dec('301');                    % CAN-NachrichtFehler im System (Überspannung, ....)
-
+id_send_error1 = hex2dec('301');                    % CAN-NachrichtFehler im System (Überspannung, ....)
+id_send_error2 = hex2dec('302');                    % CAN-NachrichtFehler im System (Überspannung, ....)
 
 %% Kalman-Parameter
 % Parameter

@@ -1,0 +1,72 @@
+CC     = "C:\Program Files\MATLAB\R2011b\sys\lcc\bin\lcc.exe"
+LD     = "C:\Program Files\MATLAB\R2011b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2011b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2011b\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"Batman_Code_sfun.obj"\
+	"Batman_Code_sfun_registry.obj"\
+	"c2_Batman_Code.obj"\
+	"c3_Batman_Code.obj"\
+	"c4_Batman_Code.obj"\
+	"c5_Batman_Code.obj"\
+	"c8_Batman_Code.obj"\
+	"c9_Batman_Code.obj"\
+	"c10_Batman_Code.obj"\
+	"c11_Batman_Code.obj"\
+	"c12_Batman_Code.obj"\
+	"c14_Batman_Code.obj"\
+	"c16_Batman_Code.obj"\
+	"c17_Batman_Code.obj"\
+	"c19_Batman_Code.obj"\
+	"lccstub.obj"\
+	"C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccdef.def"\
+	"C:\Program Files\MATLAB\R2011b\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
+	"C:\Program Files\MATLAB\R2011b\stateflow\c\mex\lib\win32\sfc_mexlcc.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libmex.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libmx.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libut.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2011b\extern\lib\win32\lcc\libmwblascompat32.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2011b\sys\lcc\include"  -I"C:\Program Files\MATLAB\R2011b\extern\include"  -I"C:\Program Files\MATLAB\R2011b\simulink\include"  -I"C:\Program Files\MATLAB\R2011b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2011b\stateflow\c\debugger\include" 
+ 
+
+Batman_Code_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o Batman_Code_sfun.mexw32 @Batman_Code_sfun.lmko
+Batman_Code_sfun.obj :	"Batman_Code_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Batman_Code_sfun.c"
+Batman_Code_sfun_registry.obj :	"Batman_Code_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Batman_Code_sfun_registry.c"
+c2_Batman_Code.obj :	"c2_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_Batman_Code.c"
+c3_Batman_Code.obj :	"c3_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_Batman_Code.c"
+c4_Batman_Code.obj :	"c4_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_Batman_Code.c"
+c5_Batman_Code.obj :	"c5_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_Batman_Code.c"
+c8_Batman_Code.obj :	"c8_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_Batman_Code.c"
+c9_Batman_Code.obj :	"c9_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_Batman_Code.c"
+c10_Batman_Code.obj :	"c10_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_Batman_Code.c"
+c11_Batman_Code.obj :	"c11_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c11_Batman_Code.c"
+c12_Batman_Code.obj :	"c12_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c12_Batman_Code.c"
+c14_Batman_Code.obj :	"c14_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c14_Batman_Code.c"
+c16_Batman_Code.obj :	"c16_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c16_Batman_Code.c"
+c17_Batman_Code.obj :	"c17_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c17_Batman_Code.c"
+c19_Batman_Code.obj :	"c19_Batman_Code.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c19_Batman_Code.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2011b\sys\lcc\mex\lccstub.c"

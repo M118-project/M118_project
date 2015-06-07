@@ -252,10 +252,10 @@ unsigned int sf_Batman_Code_process_check_sum_call( int nlhs, mxArray * plhs[],
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3364876618U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3960625588U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1740583347U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2847306605U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2255242032U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2361254623U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1340555366U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1045717073U);
   }
 
   return 1;
@@ -305,7 +305,7 @@ unsigned int sf_Batman_Code_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 3:
       {
-        if (strcmp(aiChksum, "RopxMwxxVl9WVgg959ewe") == 0) {
+        if (strcmp(aiChksum, "11d0c4Tfy0Auf4IMrNKDaB") == 0) {
           extern mxArray *sf_c3_Batman_Code_get_autoinheritance_info(void);
           plhs[0] = sf_c3_Batman_Code_get_autoinheritance_info();
           break;
@@ -341,7 +341,7 @@ unsigned int sf_Batman_Code_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 8:
       {
-        if (strcmp(aiChksum, "0uPC2oLtu57qlH1CleHVuC") == 0) {
+        if (strcmp(aiChksum, "f2zAy6wy23Qlh8buPMsSSC") == 0) {
           extern mxArray *sf_c8_Batman_Code_get_autoinheritance_info(void);
           plhs[0] = sf_c8_Batman_Code_get_autoinheritance_info();
           break;
@@ -389,7 +389,7 @@ unsigned int sf_Batman_Code_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 12:
       {
-        if (strcmp(aiChksum, "VNtxZ1efdghEVGy22h6W2B") == 0) {
+        if (strcmp(aiChksum, "P441xokYmDV38Ki6x7demF") == 0) {
           extern mxArray *sf_c12_Batman_Code_get_autoinheritance_info(void);
           plhs[0] = sf_c12_Batman_Code_get_autoinheritance_info();
           break;
@@ -425,7 +425,7 @@ unsigned int sf_Batman_Code_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 17:
       {
-        if (strcmp(aiChksum, "WjIhtcfY5FR5MmuE3JJXmH") == 0) {
+        if (strcmp(aiChksum, "9TUlGkixiKChAYvwaQ14K") == 0) {
           extern mxArray *sf_c17_Batman_Code_get_autoinheritance_info(void);
           plhs[0] = sf_c17_Batman_Code_get_autoinheritance_info();
           break;

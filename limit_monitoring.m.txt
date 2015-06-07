@@ -1,0 +1,97 @@
+%function [error_out, error_code_out, error_index_out] = limit_monitoring(cell_voltage_in, V_min_cell)
+function [error_out, error_code_out,  error_index_out] = limit_monitoring(fcn, cell_voltage_in, cell_temperatures_in, current_in, voltage_in,  CellNo, I_min_line, I_max_line, V_min_cell, V_max_cell, T_min_cell, T_max_cell, V_min_bat, V_max_bat)
+
+error_code=zeros(1,10);
+index=1;
+error_index=zeros(8,1);
+temp_find_index=zeros(1,12);
+
+if ( min(cell_voltage_in)<=V_min_cell ) 
+   error_code(index)= uint8(11);
+    index=index+1;
+    %% temp_find=find(cell_voltage_in(1:12)<=V_min_cell); %%find concerning cells
+   %error_index2=cell_voltage_in;
+   % error_index(find(cell_voltage_in <= V_min_cell))=1;
+     %TEST
+  %%error_index(1, find(cell_voltage_in <= V_min_cell))=uint8(11); %%find concerning cells
+   
+
+  for i=1:1:CellNo
+    if (cell_voltage_in(i)<=V_min_cell)%%error_index works like BCD
+        error_index(1)=error_index(1)+2^(i-1); %%only the index of affected cells; Error Code depends on the row in the matrix
+    end;
+ end;
+ 
+end;  
+if ( max(cell_voltage_in)>=V_max_cell ) 
+    error_code(index) = uint8(12);
+    index=index+1;
+    
+      for i=1:1:CellNo
+         if (cell_voltage_in(i)<=V_max_cell)
+             error_index(2)=error_index(2)+2^(i-1); %%only the index of affected cells; Error Code depends on the row in the matrix
+         end;
+      end;
+   
+end;
+if (min(cell_temperatures_in+273)<= T_min_cell )
+    error_code(index) = uint8(21);
+    index=index+1;
+    %%error_index(find((cell_temperatures_in+273)<=T_min_cell))=1; %%find concerning cells
+      for i=1:1:CellNo
+         if ((cell_temperatures_in(i)+273)<=T_min_cell)
+              error_index(3)=error_index(3)+2^(i-1); %%only the index of affected cells; Error Code depends on the row in the matrix
+         end;
+      end;
+      
+    %TEST ENDE
+    %error_matrix(2,:)=uint8(21)*temp_find;
+end;
+if (max(cell_temperatures_in+273)>=T_max_cell )
+    error_code(index) = uint8(22);
+    index=index+1;
+   
+     for i=1:1:CellNo
+         if ((cell_temperatures_in(i)+273)>=T_max_cell)
+             error_index(4)=error_index(4)+2^(i-1); %%only the index of affected cells; Error Code depends on the row in the matrix
+         end;
+      end; 
+      
+   
+end;
+if (current_in>= I_max_line ) %%Charge Current to high
+    error_code(index) = uint8(31);
+    index=index+1;
+   error_index(5)=4095;
+    %error_matrix(3,:)=uint8(31)*ones(1,12);%%always concernes all cells
+end;
+if (current_in<= I_min_line ) %%Discharge current too high
+    error_code(index) =uint8(32);
+    index=index+1;
+error_index(6)=4095; %%biniary: 1111111111110000
+    %error_matrix(3,:)=uint8(31)*ones(1,12)
+end;
+if (voltage_in<= V_min_bat )
+    error_code(index) =uint8(41);
+    index=index+1;
+error_index(7)=4095; %%biniary: 1111111111110000
+    %error_matrix(4,:)=uint8(41)*ones(1,12)
+end;
+if (voltage_in>= V_max_bat )
+    error_code(index) = uint8(42); 
+    index=index+1;
+error_index(8)=4095; %%biniary: 1111111111110000
+    %error_matrix(4,:)=uint8(41)*ones(1,12)
+end;
+
+if(index==1)
+error_out_temp=0; %%no error was detected
+else
+error_out_temp=1; %%one or more errors occured
+end;
+
+
+
+error_out=uint16(error_out_temp);
+error_code_out=uint16(error_code);
+error_index_out=uint16(error_index);
